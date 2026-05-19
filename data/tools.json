@@ -1,161 +1,1459 @@
 {
   "version": "0.1.0-alpha",
   "domains": [
-    { "id": "core",       "name": "Core",       "color": "#888888", "blurb": "Required base: shells, editors, networking, build toolchain." },
-    { "id": "iot",        "name": "IoT",        "color": "#00ff9d", "blurb": "Wi-Fi, BLE, Zigbee, Thread, MQTT, CoAP, mDNS, Matter." },
-    { "id": "automotive", "name": "Automotive", "color": "#ff7a00", "blurb": "SocketCAN, ISO-TP, UDS, DoIP, OBD-II, ICSim, caringcaribou." },
-    { "id": "ics",        "name": "ICS/SCADA",  "color": "#ffd000", "blurb": "Modbus, S7, EtherNet/IP, DNP3, BACnet, OPC-UA, conpot." },
-    { "id": "medical",    "name": "Medical",    "color": "#ff3b6b", "blurb": "DICOM, HL7, FHIR, BLE medical profiles." },
-    { "id": "embedded",   "name": "Embedded",   "color": "#7a5cff", "blurb": "JTAG, SWD, UART, SPI, I2C, MCU flashing, glitching." },
-    { "id": "rf",         "name": "RF / SDR",   "color": "#00d6ff", "blurb": "GNU Radio, HackRF, RTL-SDR, URH, rtl_433, multimon." },
-    { "id": "firmware",   "name": "Firmware",   "color": "#ff00aa", "blurb": "Extraction, rehosting, fuzzing, static + dynamic analysis." },
-    { "id": "forensics",  "name": "Forensics",  "color": "#9bff00", "blurb": "Disk, memory, timeline, carving, rootkit detection." }
+    {
+      "id": "core",
+      "name": "Core",
+      "color": "#888888",
+      "blurb": "Required base: shells, editors, networking, build toolchain."
+    },
+    {
+      "id": "iot",
+      "name": "IoT",
+      "color": "#00ff9d",
+      "blurb": "Wi-Fi, BLE, Zigbee, Thread, MQTT, CoAP, mDNS, Matter."
+    },
+    {
+      "id": "automotive",
+      "name": "Automotive",
+      "color": "#ff7a00",
+      "blurb": "SocketCAN, ISO-TP, UDS, DoIP, OBD-II, ICSim, caringcaribou."
+    },
+    {
+      "id": "ics",
+      "name": "ICS/SCADA",
+      "color": "#ffd000",
+      "blurb": "Modbus, S7, EtherNet/IP, DNP3, BACnet, OPC-UA, conpot."
+    },
+    {
+      "id": "medical",
+      "name": "Medical",
+      "color": "#ff3b6b",
+      "blurb": "DICOM, HL7, FHIR, BLE medical profiles."
+    },
+    {
+      "id": "embedded",
+      "name": "Embedded",
+      "color": "#7a5cff",
+      "blurb": "JTAG, SWD, UART, SPI, I2C, MCU flashing, glitching."
+    },
+    {
+      "id": "rf",
+      "name": "RF / SDR",
+      "color": "#00d6ff",
+      "blurb": "GNU Radio, HackRF, RTL-SDR, URH, rtl_433, multimon."
+    },
+    {
+      "id": "firmware",
+      "name": "Firmware",
+      "color": "#ff00aa",
+      "blurb": "Extraction, rehosting, fuzzing, static + dynamic analysis."
+    },
+    {
+      "id": "forensics",
+      "name": "Forensics",
+      "color": "#9bff00",
+      "blurb": "Disk, memory, timeline, carving, rootkit detection."
+    },
+    {
+      "id": "bluetooth",
+      "name": "Bluetooth",
+      "color": "#00aaff",
+      "blurb": "Bluetooth Classic and BLE recon, sniffing, exploitation."
+    },
+    {
+      "id": "wifi",
+      "name": "Wi-Fi",
+      "color": "#7df9ff",
+      "blurb": "Wi-Fi WPA/WPA2/WPA3 and WPS auditing."
+    },
+    {
+      "id": "nfc",
+      "name": "NFC / RFID",
+      "color": "#ffb86c",
+      "blurb": "NFC, RFID, MIFARE, smartcards, contactless payments."
+    },
+    {
+      "id": "network",
+      "name": "Network",
+      "color": "#a78bfa",
+      "blurb": "Scanning, fuzzing, MITM, protocol attacks at scale."
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "color": "#3ddc84",
+      "blurb": "Android APK / firmware / device assessment."
+    }
   ],
   "tools": [
-    { "name": "kismet",                "domain": "iot",        "desc": "Wireless network sniffer and IDS for Wi-Fi, BLE, Zigbee.",                       "url": "https://www.kismetwireless.net" },
-    { "name": "aircrack-ng",           "domain": "iot",        "desc": "Wi-Fi WEP / WPA / WPA2 auditing suite.",                                        "url": "https://www.aircrack-ng.org" },
-    { "name": "hcxtools",              "domain": "iot",        "desc": "PMKID and 4-way-handshake capture/conversion for hashcat.",                     "url": "https://github.com/ZerBea/hcxtools" },
-    { "name": "hcxdumptool",           "domain": "iot",        "desc": "Active and passive Wi-Fi capture tool, modern WPA3 features.",                  "url": "https://github.com/ZerBea/hcxdumptool" },
-    { "name": "reaver",                "domain": "iot",        "desc": "WPS PIN brute-force attack against Wi-Fi access points.",                       "url": "https://github.com/t6x/reaver-wps-fork-t6x" },
-    { "name": "wifite",                "domain": "iot",        "desc": "Automated Wi-Fi audit wrapper around aircrack-ng + reaver.",                    "url": "https://github.com/derv82/wifite2" },
-    { "name": "bettercap",             "domain": "iot",        "desc": "Swiss-army MITM tool for Wi-Fi, BLE, Ethernet.",                                 "url": "https://www.bettercap.org" },
-    { "name": "bluez + btscanner",     "domain": "iot",        "desc": "Bluetooth Classic + LE host stack and scanners.",                               "url": "http://www.bluez.org" },
-    { "name": "mosquitto-clients",     "domain": "iot",        "desc": "MQTT pub/sub CLI for poking brokers.",                                          "url": "https://mosquitto.org" },
-    { "name": "mqtt-pwn",              "domain": "iot",        "desc": "MQTT broker recon + exploitation framework with SQLite-backed shell.",          "url": "https://github.com/akamai-threat-research/mqtt-pwn" },
-    { "name": "expliot",               "domain": "iot",        "desc": "Metasploit-style framework for IoT protocols (CAN, BLE, MQTT, CoAP, Modbus).",  "url": "https://gitlab.com/expliot_framework/expliot" },
-    { "name": "killerbee",             "domain": "iot",        "desc": "IEEE 802.15.4 / Zigbee / 6LoWPAN sniffing and attack toolkit.",                 "url": "https://github.com/riverloopsec/killerbee" },
-    { "name": "PRET",                  "domain": "iot",        "desc": "Printer Exploitation Toolkit (PJL / PostScript / PCL).",                        "url": "https://github.com/RUB-NDS/PRET" },
-    { "name": "libcoap (coap-client)", "domain": "iot",        "desc": "CoAP CLI client for talking to constrained-device endpoints.",                  "url": "https://libcoap.net" },
-    { "name": "mitmproxy",             "domain": "iot",        "desc": "Interactive HTTPS proxy for cloud-control-channel inspection.",                 "url": "https://mitmproxy.org" },
-
-    { "name": "can-utils",             "domain": "automotive", "desc": "SocketCAN userland (candump, cansend, cangen, isotpdump).",                     "url": "https://github.com/linux-can/can-utils" },
-    { "name": "python-can",            "domain": "automotive", "desc": "Cross-platform Python CAN bus library.",                                        "url": "https://github.com/hardbyte/python-can" },
-    { "name": "cantools",              "domain": "automotive", "desc": "DBC/KCD parsing, encode/decode, CAN database tools.",                           "url": "https://github.com/cantools/cantools" },
-    { "name": "udsoncan",              "domain": "automotive", "desc": "ISO-14229 Unified Diagnostic Services client.",                                 "url": "https://github.com/pylessard/python-udsoncan" },
-    { "name": "doipclient",            "domain": "automotive", "desc": "DoIP (Diagnostics over IP) client implementation.",                             "url": "https://github.com/jacobschaer/python-doipclient" },
-    { "name": "caringcaribou",         "domain": "automotive", "desc": "CAN bus security framework: discovery, UDS, XCP, fuzzing, dcm.",                "url": "https://github.com/CaringCaribou/caringcaribou" },
-    { "name": "ICSim",                 "domain": "automotive", "desc": "Instrument cluster simulator for learning CAN reverse engineering.",            "url": "https://github.com/zombieCraig/ICSim" },
-    { "name": "python-OBD",            "domain": "automotive", "desc": "OBD-II ELM327 client for live vehicle telemetry.",                              "url": "https://github.com/brendan-w/python-OBD" },
-
-    { "name": "pymodbus",              "domain": "ics",        "desc": "Modbus TCP / RTU client and server in Python.",                                 "url": "https://github.com/pymodbus-dev/pymodbus" },
-    { "name": "python-snap7",          "domain": "ics",        "desc": "Siemens S7 PLC client via Snap7.",                                              "url": "https://github.com/gijzelaerr/python-snap7" },
-    { "name": "asyncua / opcua",       "domain": "ics",        "desc": "OPC-UA Python client and server.",                                              "url": "https://github.com/FreeOpcUa/opcua-asyncio" },
-    { "name": "bacpypes",              "domain": "ics",        "desc": "BACnet protocol stack for building-automation systems.",                        "url": "https://github.com/JoelBender/bacpypes" },
-    { "name": "conpot",                "domain": "ics",        "desc": "Low-interaction ICS honeypot (Modbus, S7, BACnet, EtherNet/IP, ...).",          "url": "https://github.com/mushorg/conpot" },
-    { "name": "plcscan",               "domain": "ics",        "desc": "Network scanner that fingerprints Modbus + S7 PLCs.",                           "url": "https://github.com/yanlinlin82/plcscan" },
-
-    { "name": "dcmtk",                 "domain": "medical",    "desc": "Reference DICOM toolkit: storescu, findscu, movescu, dcmdump.",                 "url": "https://dicom.offis.de/dcmtk" },
-    { "name": "pydicom",               "domain": "medical",    "desc": "Pure-Python DICOM reader/writer.",                                              "url": "https://github.com/pydicom/pydicom" },
-    { "name": "pynetdicom",            "domain": "medical",    "desc": "DICOM SCU / SCP networking on top of pydicom.",                                 "url": "https://github.com/pydicom/pynetdicom" },
-    { "name": "hl7apy",                "domain": "medical",    "desc": "HL7 v2 message parser and builder.",                                            "url": "https://github.com/crs4/hl7apy" },
-    { "name": "fhir.resources",        "domain": "medical",    "desc": "FHIR R4 / R5 resource models in Python.",                                       "url": "https://github.com/nazrulworld/fhir.resources" },
-    { "name": "bleak",                 "domain": "medical",    "desc": "Cross-platform BLE GATT client for medical wearables.",                         "url": "https://github.com/hbldh/bleak" },
-
-    { "name": "openocd",               "domain": "embedded",   "desc": "JTAG / SWD debugger and in-system programmer.",                                 "url": "https://openocd.org" },
-    { "name": "pyocd",                 "domain": "embedded",   "desc": "Python ARM Cortex-M debug, flash, and programming via CMSIS-DAP / J-Link.",     "url": "https://github.com/pyocd/pyOCD" },
-    { "name": "blackmagic",            "domain": "embedded",   "desc": "Black Magic Probe firmware and host tools, GDB server in the probe itself.",    "url": "https://github.com/blackmagic-debug/blackmagic" },
-    { "name": "chipwhisperer",         "domain": "embedded",   "desc": "Open-source power analysis and voltage / clock glitching platform.",            "url": "https://github.com/newaetech/chipwhisperer" },
-    { "name": "glasgow",               "domain": "embedded",   "desc": "FPGA-based digital interface explorer (UART, JTAG, SWD, SPI, JTAG, ...).",      "url": "https://github.com/GlasgowEmbedded/glasgow" },
-    { "name": "minipro",               "domain": "embedded",   "desc": "Linux client for the TL866 series of universal chip programmers.",              "url": "https://gitlab.com/DavidGriffith/minipro" },
-    { "name": "flashprog",             "domain": "embedded",   "desc": "Actively-maintained fork of flashrom for SPI / parallel chip read-write.",       "url": "https://flashprog.org" },
-    { "name": "ch341prog",             "domain": "embedded",   "desc": "Read / write SPI flash via $5 CH341A USB programmers.",                          "url": "https://github.com/setarcos/ch341prog" },
-    { "name": "proxmark3",             "domain": "embedded",   "desc": "RFID / NFC research platform: read, replay, sniff, emulate 125 kHz and 13.56 MHz.","url": "https://github.com/RfidResearchGroup/proxmark3" },
-    { "name": "libnfc",                "domain": "embedded",   "desc": "Cross-platform NFC reader access library plus nfc-list / nfc-mfclassic.",       "url": "https://github.com/nfc-tools/libnfc" },
-    { "name": "mfoc / mfcuk",          "domain": "embedded",   "desc": "Crack MIFARE Classic keys via known-key offline and Dark Side attacks.",        "url": "https://github.com/nfc-tools/mfoc" },
-    { "name": "pcsc-tools",            "domain": "embedded",   "desc": "PC/SC smartcard listing, ATR parsing, and APDU testing.",                       "url": "https://pcsc-tools.apdu.fr" },
-    { "name": "opensc",                "domain": "embedded",   "desc": "Smartcard PKCS#11 stack and tooling (pkcs15-tool, opensc-tool).",               "url": "https://github.com/OpenSC/OpenSC" },
-    { "name": "ubertooth-tools",       "domain": "embedded",   "desc": "Userland for the Ubertooth One BLE / BT sniffer.",                              "url": "https://github.com/greatscottgadgets/ubertooth" },
-    { "name": "btlejack",              "domain": "embedded",   "desc": "BLE 4.x / 5.x connection sniffing and hijacking with Micro:bit or BBC nRF.",     "url": "https://github.com/virtualabs/btlejack" },
-    { "name": "crackle",               "domain": "embedded",   "desc": "Crack Bluetooth Low Energy legacy pairing (TK / STK / LTK).",                   "url": "https://github.com/mikeryan/crackle" },
-    { "name": "android-tools-adb",     "domain": "embedded",   "desc": "adb + fastboot for talking to Android-based embedded devices.",                 "url": "https://developer.android.com/tools/adb" },
-    { "name": "imx_usb_loader",        "domain": "embedded",   "desc": "Load images over USB into NXP i.MX SoCs in serial download mode.",              "url": "https://github.com/boundarydevices/imx_usb_loader" },
-    { "name": "rkflashtool",           "domain": "embedded",   "desc": "Read / write / boot Rockchip SoCs (RK29xx, RK30xx, RK33xx).",                   "url": "https://github.com/linux-rockchip/rkflashtool" },
-    { "name": "sunxi-tools",           "domain": "embedded",   "desc": "Allwinner SoC FEL-mode bootstrap and flashing (boards with A10 / A20 / H3 / ...).","url": "https://github.com/linux-sunxi/sunxi-tools" },
-    { "name": "hashcat",               "domain": "embedded",   "desc": "GPU-accelerated password / key cracker, useful against firmware secrets and BLE handshakes.","url": "https://hashcat.net/hashcat" },
-    { "name": "urjtag",                "domain": "embedded",   "desc": "Boundary-scan JTAG suite for hardware reverse engineering.",                    "url": "http://urjtag.org" },
-    { "name": "flashrom",              "domain": "embedded",   "desc": "SPI flash chip read / write / verify.",                                         "url": "https://flashrom.org" },
-    { "name": "chipsec",               "domain": "embedded",   "desc": "Platform security assessment framework (BIOS/UEFI/SMM).",                       "url": "https://github.com/chipsec/chipsec" },
-    { "name": "sigrok-cli + pulseview","domain": "embedded",   "desc": "Logic analyzer capture and decode (UART, SPI, I2C, CAN, ...).",                 "url": "https://sigrok.org" },
-    { "name": "avrdude",               "domain": "embedded",   "desc": "AVR microcontroller flashing.",                                                 "url": "https://github.com/avrdudes/avrdude" },
-    { "name": "esptool",               "domain": "embedded",   "desc": "ESP8266 / ESP32 flash and ROM dump utility.",                                   "url": "https://github.com/espressif/esptool" },
-    { "name": "stlink-tools",          "domain": "embedded",   "desc": "ST-Link programmer for STM32 / STM8.",                                          "url": "https://github.com/stlink-org/stlink" },
-    { "name": "dfu-util",              "domain": "embedded",   "desc": "USB Device Firmware Upgrade utility.",                                          "url": "https://dfu-util.sourceforge.net" },
-    { "name": "i2c-tools / spi-tools", "domain": "embedded",   "desc": "Userspace I2C and SPI bit-banging from Linux.",                                 "url": "https://github.com/mhei/linux-i2c-tools" },
-    { "name": "gcc-arm-none-eabi",     "domain": "embedded",   "desc": "ARM Cortex-M cross-compilation toolchain.",                                     "url": "https://developer.arm.com/downloads/-/gnu-rm" },
-    { "name": "gdb-multiarch",         "domain": "embedded",   "desc": "Debugger with support for ARM, MIPS, RISC-V, AVR, ...",                         "url": "https://www.gnu.org/software/gdb" },
-    { "name": "qemu-system / qemu-user","domain": "embedded",  "desc": "Full-system and user-mode emulation for rehosting.",                            "url": "https://www.qemu.org" },
-
-    { "name": "gnuradio",              "domain": "rf",         "desc": "Signal-processing framework for SDR development.",                              "url": "https://www.gnuradio.org" },
-    { "name": "hackrf",                "domain": "rf",         "desc": "1 MHz - 6 GHz half-duplex SDR userspace tools.",                                "url": "https://greatscottgadgets.com/hackrf/" },
-    { "name": "rtl-sdr",               "domain": "rf",         "desc": "Cheap-as-chips DVB-T dongle SDR drivers and utilities.",                        "url": "https://osmocom.org/projects/rtl-sdr" },
-    { "name": "airspy",                "domain": "rf",         "desc": "Airspy R2 / Mini / HF+ Discovery drivers.",                                     "url": "https://airspy.com" },
-    { "name": "soapysdr",              "domain": "rf",         "desc": "Vendor-neutral SDR abstraction layer.",                                         "url": "https://github.com/pothosware/SoapySDR" },
-    { "name": "gqrx",                  "domain": "rf",         "desc": "GNU-Radio-based spectrum analyzer and demodulator.",                            "url": "https://gqrx.dk" },
-    { "name": "sdrangel",              "domain": "rf",         "desc": "Wide-band multi-mode SDR receiver and transmitter.",                            "url": "https://github.com/f4exb/sdrangel" },
-    { "name": "inspectrum",            "domain": "rf",         "desc": "Offline visual analysis of captured SDR signals.",                              "url": "https://github.com/miek/inspectrum" },
-    { "name": "rtl_433",               "domain": "rf",         "desc": "Decode ISM-band devices: tire pressure, weather, sensors.",                     "url": "https://github.com/merbanan/rtl_433" },
-    { "name": "multimon-ng",           "domain": "rf",         "desc": "Decode POCSAG, FLEX, AFSK, DTMF and more.",                                     "url": "https://github.com/EliasOenal/multimon-ng" },
-    { "name": "universal-radio-hacker","domain": "rf",         "desc": "Reverse-engineer wireless protocols visually.",                                 "url": "https://github.com/jopohl/urh" },
-    { "name": "dump1090-fa",           "domain": "rf",         "desc": "ADS-B Mode S decoder for tracking aircraft.",                                   "url": "https://github.com/flightaware/dump1090" },
-
-    { "name": "binwalk",               "domain": "firmware",   "desc": "Firmware extraction and entropy analysis.",                                     "url": "https://github.com/ReFirmLabs/binwalk" },
-    { "name": "emba",                  "domain": "firmware",   "desc": "Modular firmware security analyzer: extraction, static, dynamic, exploit checks.","url": "https://github.com/e-m-b-a/emba" },
-    { "name": "FACT-core",             "domain": "firmware",   "desc": "Firmware Analysis and Comparison Tool (FACT), heavy-weight pipeline framework.","url": "https://github.com/fkie-cad/FACT_core" },
-    { "name": "firmadyne",             "domain": "firmware",   "desc": "Whole-system emulation of Linux-based firmware for dynamic analysis.",          "url": "https://github.com/firmadyne/firmadyne" },
-    { "name": "FirmAE",                "domain": "firmware",   "desc": "Improved firmware emulator with higher success rate than firmadyne.",           "url": "https://github.com/pr0v3rbs/FirmAE" },
-    { "name": "qiling",                "domain": "firmware",   "desc": "Cross-platform binary emulation framework built on Unicorn.",                   "url": "https://github.com/qilingframework/qiling" },
-    { "name": "avatar2",               "domain": "firmware",   "desc": "Hybrid binary analysis orchestrator (QEMU + real hardware + angr).",            "url": "https://github.com/avatartwo/avatar2" },
-    { "name": "panda",                 "domain": "firmware",   "desc": "Platform for Architecture-Neutral Dynamic Analysis - whole-system record/replay.","url": "https://github.com/panda-re/panda" },
-    { "name": "jefferson",             "domain": "firmware",   "desc": "JFFS2 filesystem extractor (the common embedded NAND filesystem).",             "url": "https://github.com/sviehb/jefferson" },
-    { "name": "ubi_reader",            "domain": "firmware",   "desc": "UBI / UBIFS image extractor and analysis tool.",                                "url": "https://github.com/jrspruitt/ubi_reader" },
-    { "name": "sasquatch",             "domain": "firmware",   "desc": "Patched unsquashfs that handles vendor-modified SquashFS headers.",             "url": "https://github.com/devttys0/sasquatch" },
-    { "name": "yaffs2utils",           "domain": "firmware",   "desc": "Read / write YAFFS2, the other NAND filesystem.",                               "url": "https://github.com/jhautbois/yaffs2utils" },
-    { "name": "mtd-utils",             "domain": "firmware",   "desc": "jffs2dump, ubinize, nandwrite, mkfs.ubifs - kernel MTD subsystem userland.",    "url": "http://www.linux-mtd.infradead.org" },
-    { "name": "u-boot-tools",          "domain": "firmware",   "desc": "mkimage / dumpimage / fw_printenv for U-Boot images and environments.",         "url": "https://github.com/u-boot/u-boot" },
-    { "name": "device-tree-compiler",  "domain": "firmware",   "desc": "dtc / fdtdump: compile and decompile flattened device trees.",                  "url": "https://git.kernel.org/pub/scm/utils/dtc/dtc.git" },
-    { "name": "diffoscope",            "domain": "firmware",   "desc": "Recursive in-depth diff of binaries, firmware images, packages, anything.",     "url": "https://diffoscope.org" },
-    { "name": "jadx",                  "domain": "firmware",   "desc": "DEX / APK to Java decompiler - Android-based embedded systems.",                "url": "https://github.com/skylot/jadx" },
-    { "name": "apktool",               "domain": "firmware",   "desc": "Reverse-engineer Android APKs: smali, resources, repackaging.",                 "url": "https://apktool.org" },
-    { "name": "ROPgadget",             "domain": "firmware",   "desc": "Search ROP gadgets in ELF / PE / Mach-O binaries.",                             "url": "https://github.com/JonathanSalwan/ROPgadget" },
-    { "name": "ropper",                "domain": "firmware",   "desc": "ROP / JOP gadget finder with arch coverage beyond ROPgadget.",                  "url": "https://github.com/sashs/Ropper" },
-    { "name": "pwndbg / gef",          "domain": "firmware",   "desc": "GDB plugins for exploit dev: heap inspection, register diff, ROP helpers.",     "url": "https://github.com/pwndbg/pwndbg" },
-    { "name": "objection",             "domain": "firmware",   "desc": "Frida-powered runtime mobile / embedded exploration toolkit.",                  "url": "https://github.com/sensepost/objection" },
-    { "name": "routersploit",          "domain": "firmware",   "desc": "Embedded-device exploitation framework (Metasploit-style modules for routers).","url": "https://github.com/threat9/routersploit" },
-    { "name": "triton",                "domain": "firmware",   "desc": "Dynamic binary analysis library: SMT solving, taint, symbolic exec.",           "url": "https://github.com/JonathanSalwan/Triton" },
-    { "name": "rehoster / renode",     "domain": "firmware",   "desc": "Functional simulation framework for full embedded systems (Antmicro Renode).",  "url": "https://renode.io" },
-    { "name": "one_gadget",            "domain": "firmware",   "desc": "Find single-call libc gadgets that pop a shell.",                               "url": "https://github.com/david942j/one_gadget" },
-    { "name": "binaryninja-free",      "domain": "firmware",   "desc": "Free tier of Binary Ninja for non-commercial reverse engineering.",             "url": "https://binary.ninja/free/" },
-    { "name": "patchkit",              "domain": "firmware",   "desc": "Statically rewrite binaries: insert hooks, replace functions.",                 "url": "https://github.com/lunixbochs/patchkit" },
-    { "name": "unblob",                "domain": "firmware",   "desc": "Modern firmware-extraction successor to binwalk.",                              "url": "https://github.com/onekey-sec/unblob" },
-    { "name": "firmwalker",            "domain": "firmware",   "desc": "Scan extracted FS for keys, creds, IPs, version markers.",                      "url": "https://github.com/craigz28/firmwalker" },
-    { "name": "yara",                  "domain": "firmware",   "desc": "Pattern-matching engine for binary classification.",                            "url": "https://github.com/VirusTotal/yara" },
-    { "name": "radare2 / rizin",       "domain": "firmware",   "desc": "Reverse engineering framework and disassembler.",                               "url": "https://rada.re" },
-    { "name": "cutter",                "domain": "firmware",   "desc": "Qt frontend to rizin with Ghidra decompiler.",                                  "url": "https://cutter.re" },
-    { "name": "ghidra",                "domain": "firmware",   "desc": "NSA-released reverse engineering platform.",                                    "url": "https://ghidra-sre.org" },
-    { "name": "angr",                  "domain": "firmware",   "desc": "Concolic execution and binary analysis platform.",                              "url": "https://angr.io" },
-    { "name": "frida",                 "domain": "firmware",   "desc": "Dynamic instrumentation toolkit for running binaries.",                         "url": "https://frida.re" },
-    { "name": "pwntools",              "domain": "firmware",   "desc": "CTF / exploit-development swiss army.",                                         "url": "https://github.com/Gallopsled/pwntools" },
-    { "name": "AFL++",                 "domain": "firmware",   "desc": "Coverage-guided fuzzer (community fork of AFL).",                               "url": "https://github.com/AFLplusplus/AFLplusplus" },
-    { "name": "honggfuzz",             "domain": "firmware",   "desc": "Google's security-oriented fuzzer.",                                            "url": "https://github.com/google/honggfuzz" },
-    { "name": "unicorn engine",        "domain": "firmware",   "desc": "Lightweight CPU emulator for selective rehosting.",                             "url": "https://www.unicorn-engine.org" },
-    { "name": "lief",                  "domain": "firmware",   "desc": "Parse, modify, abstract ELF / PE / Mach-O / DEX.",                              "url": "https://lief-project.github.io" },
-
-    { "name": "sleuthkit + autopsy",   "domain": "forensics",  "desc": "Filesystem analysis (FAT, ext, NTFS, HFS+, SquashFS).",                         "url": "https://www.sleuthkit.org" },
-    { "name": "volatility3",           "domain": "forensics",  "desc": "Memory forensics framework for Linux, macOS, Windows.",                         "url": "https://github.com/volatilityfoundation/volatility3" },
-    { "name": "plaso / log2timeline",  "domain": "forensics",  "desc": "Timeline generation from forensic artifacts.",                                  "url": "https://plaso.readthedocs.io" },
-    { "name": "dc3dd / dcfldd",        "domain": "forensics",  "desc": "Forensic disk imaging with hash verification.",                                 "url": "https://sourceforge.net/projects/dc3dd" },
-    { "name": "ewf-tools",             "domain": "forensics",  "desc": "EnCase (E01) image read/write.",                                                "url": "https://github.com/libyal/libewf" },
-    { "name": "foremost / scalpel",    "domain": "forensics",  "desc": "File carving from raw / damaged media.",                                        "url": "https://foremost.sourceforge.net" },
-    { "name": "testdisk / photorec",   "domain": "forensics",  "desc": "Recover lost partitions and deleted files.",                                    "url": "https://www.cgsecurity.org/wiki/TestDisk" },
-    { "name": "exiftool",              "domain": "forensics",  "desc": "Read / write metadata across hundreds of formats.",                             "url": "https://exiftool.org" },
-
-    { "name": "nmap",                  "domain": "core",       "desc": "Network and service discovery.",                                                "url": "https://nmap.org" },
-    { "name": "wireshark / tshark",    "domain": "core",       "desc": "Packet capture and dissection with deep IoT/OT support.",                       "url": "https://www.wireshark.org" },
-    { "name": "tcpdump",               "domain": "core",       "desc": "Low-level packet sniffer.",                                                     "url": "https://www.tcpdump.org" },
-    { "name": "scapy (via python3)",   "domain": "core",       "desc": "Packet manipulation library used by half the IoT/ICS tools above.",             "url": "https://scapy.net" },
-    { "name": "python3 + pipx",        "domain": "core",       "desc": "Default scripting environment with isolated tool installs.",                    "url": "https://www.python.org" },
-    { "name": "neovim / vim",          "domain": "core",       "desc": "Editors that don't require a mouse.",                                           "url": "https://neovim.io" },
-    { "name": "tmux",                  "domain": "core",       "desc": "Terminal multiplexer for long-running captures.",                               "url": "https://github.com/tmux/tmux" },
-    { "name": "ripgrep / fd / bat",    "domain": "core",       "desc": "Modern grep / find / cat replacements.",                                        "url": "https://github.com/BurntSushi/ripgrep" }
+    {
+      "name": "kismet",
+      "domain": "iot",
+      "desc": "Wireless network sniffer and IDS for Wi-Fi, BLE, Zigbee.",
+      "url": "https://www.kismetwireless.net"
+    },
+    {
+      "name": "aircrack-ng",
+      "domain": "iot",
+      "desc": "Wi-Fi WEP / WPA / WPA2 auditing suite.",
+      "url": "https://www.aircrack-ng.org"
+    },
+    {
+      "name": "hcxtools",
+      "domain": "iot",
+      "desc": "PMKID and 4-way-handshake capture/conversion for hashcat.",
+      "url": "https://github.com/ZerBea/hcxtools"
+    },
+    {
+      "name": "hcxdumptool",
+      "domain": "iot",
+      "desc": "Active and passive Wi-Fi capture tool, modern WPA3 features.",
+      "url": "https://github.com/ZerBea/hcxdumptool"
+    },
+    {
+      "name": "reaver",
+      "domain": "iot",
+      "desc": "WPS PIN brute-force attack against Wi-Fi access points.",
+      "url": "https://github.com/t6x/reaver-wps-fork-t6x"
+    },
+    {
+      "name": "wifite",
+      "domain": "iot",
+      "desc": "Automated Wi-Fi audit wrapper around aircrack-ng + reaver.",
+      "url": "https://github.com/derv82/wifite2"
+    },
+    {
+      "name": "bettercap",
+      "domain": "iot",
+      "desc": "Swiss-army MITM tool for Wi-Fi, BLE, Ethernet.",
+      "url": "https://www.bettercap.org"
+    },
+    {
+      "name": "bluez + btscanner",
+      "domain": "iot",
+      "desc": "Bluetooth Classic + LE host stack and scanners.",
+      "url": "http://www.bluez.org"
+    },
+    {
+      "name": "mosquitto-clients",
+      "domain": "iot",
+      "desc": "MQTT pub/sub CLI for poking brokers.",
+      "url": "https://mosquitto.org"
+    },
+    {
+      "name": "mqtt-pwn",
+      "domain": "iot",
+      "desc": "MQTT broker recon + exploitation framework with SQLite-backed shell.",
+      "url": "https://github.com/akamai-threat-research/mqtt-pwn"
+    },
+    {
+      "name": "expliot",
+      "domain": "iot",
+      "desc": "Metasploit-style framework for IoT protocols (CAN, BLE, MQTT, CoAP, Modbus).",
+      "url": "https://gitlab.com/expliot_framework/expliot"
+    },
+    {
+      "name": "killerbee",
+      "domain": "iot",
+      "desc": "IEEE 802.15.4 / Zigbee / 6LoWPAN sniffing and attack toolkit.",
+      "url": "https://github.com/riverloopsec/killerbee"
+    },
+    {
+      "name": "PRET",
+      "domain": "iot",
+      "desc": "Printer Exploitation Toolkit (PJL / PostScript / PCL).",
+      "url": "https://github.com/RUB-NDS/PRET"
+    },
+    {
+      "name": "libcoap (coap-client)",
+      "domain": "iot",
+      "desc": "CoAP CLI client for talking to constrained-device endpoints.",
+      "url": "https://libcoap.net"
+    },
+    {
+      "name": "mitmproxy",
+      "domain": "iot",
+      "desc": "Interactive HTTPS proxy for cloud-control-channel inspection.",
+      "url": "https://mitmproxy.org"
+    },
+    {
+      "name": "can-utils",
+      "domain": "automotive",
+      "desc": "SocketCAN userland (candump, cansend, cangen, isotpdump).",
+      "url": "https://github.com/linux-can/can-utils"
+    },
+    {
+      "name": "python-can",
+      "domain": "automotive",
+      "desc": "Cross-platform Python CAN bus library.",
+      "url": "https://github.com/hardbyte/python-can"
+    },
+    {
+      "name": "cantools",
+      "domain": "automotive",
+      "desc": "DBC/KCD parsing, encode/decode, CAN database tools.",
+      "url": "https://github.com/cantools/cantools"
+    },
+    {
+      "name": "udsoncan",
+      "domain": "automotive",
+      "desc": "ISO-14229 Unified Diagnostic Services client.",
+      "url": "https://github.com/pylessard/python-udsoncan"
+    },
+    {
+      "name": "doipclient",
+      "domain": "automotive",
+      "desc": "DoIP (Diagnostics over IP) client implementation.",
+      "url": "https://github.com/jacobschaer/python-doipclient"
+    },
+    {
+      "name": "caringcaribou",
+      "domain": "automotive",
+      "desc": "CAN bus security framework: discovery, UDS, XCP, fuzzing, dcm.",
+      "url": "https://github.com/CaringCaribou/caringcaribou"
+    },
+    {
+      "name": "ICSim",
+      "domain": "automotive",
+      "desc": "Instrument cluster simulator for learning CAN reverse engineering.",
+      "url": "https://github.com/zombieCraig/ICSim"
+    },
+    {
+      "name": "python-OBD",
+      "domain": "automotive",
+      "desc": "OBD-II ELM327 client for live vehicle telemetry.",
+      "url": "https://github.com/brendan-w/python-OBD"
+    },
+    {
+      "name": "pymodbus",
+      "domain": "ics",
+      "desc": "Modbus TCP / RTU client and server in Python.",
+      "url": "https://github.com/pymodbus-dev/pymodbus"
+    },
+    {
+      "name": "python-snap7",
+      "domain": "ics",
+      "desc": "Siemens S7 PLC client via Snap7.",
+      "url": "https://github.com/gijzelaerr/python-snap7"
+    },
+    {
+      "name": "asyncua / opcua",
+      "domain": "ics",
+      "desc": "OPC-UA Python client and server.",
+      "url": "https://github.com/FreeOpcUa/opcua-asyncio"
+    },
+    {
+      "name": "bacpypes",
+      "domain": "ics",
+      "desc": "BACnet protocol stack for building-automation systems.",
+      "url": "https://github.com/JoelBender/bacpypes"
+    },
+    {
+      "name": "conpot",
+      "domain": "ics",
+      "desc": "Low-interaction ICS honeypot (Modbus, S7, BACnet, EtherNet/IP, ...).",
+      "url": "https://github.com/mushorg/conpot"
+    },
+    {
+      "name": "plcscan",
+      "domain": "ics",
+      "desc": "Network scanner that fingerprints Modbus + S7 PLCs.",
+      "url": "https://github.com/yanlinlin82/plcscan"
+    },
+    {
+      "name": "dcmtk",
+      "domain": "medical",
+      "desc": "Reference DICOM toolkit: storescu, findscu, movescu, dcmdump.",
+      "url": "https://dicom.offis.de/dcmtk"
+    },
+    {
+      "name": "pydicom",
+      "domain": "medical",
+      "desc": "Pure-Python DICOM reader/writer.",
+      "url": "https://github.com/pydicom/pydicom"
+    },
+    {
+      "name": "pynetdicom",
+      "domain": "medical",
+      "desc": "DICOM SCU / SCP networking on top of pydicom.",
+      "url": "https://github.com/pydicom/pynetdicom"
+    },
+    {
+      "name": "hl7apy",
+      "domain": "medical",
+      "desc": "HL7 v2 message parser and builder.",
+      "url": "https://github.com/crs4/hl7apy"
+    },
+    {
+      "name": "fhir.resources",
+      "domain": "medical",
+      "desc": "FHIR R4 / R5 resource models in Python.",
+      "url": "https://github.com/nazrulworld/fhir.resources"
+    },
+    {
+      "name": "bleak",
+      "domain": "medical",
+      "desc": "Cross-platform BLE GATT client for medical wearables.",
+      "url": "https://github.com/hbldh/bleak"
+    },
+    {
+      "name": "openocd",
+      "domain": "embedded",
+      "desc": "JTAG / SWD debugger and in-system programmer.",
+      "url": "https://openocd.org"
+    },
+    {
+      "name": "pyocd",
+      "domain": "embedded",
+      "desc": "Python ARM Cortex-M debug, flash, and programming via CMSIS-DAP / J-Link.",
+      "url": "https://github.com/pyocd/pyOCD"
+    },
+    {
+      "name": "blackmagic",
+      "domain": "embedded",
+      "desc": "Black Magic Probe firmware and host tools, GDB server in the probe itself.",
+      "url": "https://github.com/blackmagic-debug/blackmagic"
+    },
+    {
+      "name": "chipwhisperer",
+      "domain": "embedded",
+      "desc": "Open-source power analysis and voltage / clock glitching platform.",
+      "url": "https://github.com/newaetech/chipwhisperer"
+    },
+    {
+      "name": "glasgow",
+      "domain": "embedded",
+      "desc": "FPGA-based digital interface explorer (UART, JTAG, SWD, SPI, JTAG, ...).",
+      "url": "https://github.com/GlasgowEmbedded/glasgow"
+    },
+    {
+      "name": "minipro",
+      "domain": "embedded",
+      "desc": "Linux client for the TL866 series of universal chip programmers.",
+      "url": "https://gitlab.com/DavidGriffith/minipro"
+    },
+    {
+      "name": "flashprog",
+      "domain": "embedded",
+      "desc": "Actively-maintained fork of flashrom for SPI / parallel chip read-write.",
+      "url": "https://flashprog.org"
+    },
+    {
+      "name": "ch341prog",
+      "domain": "embedded",
+      "desc": "Read / write SPI flash via $5 CH341A USB programmers.",
+      "url": "https://github.com/setarcos/ch341prog"
+    },
+    {
+      "name": "proxmark3",
+      "domain": "embedded",
+      "desc": "RFID / NFC research platform: read, replay, sniff, emulate 125 kHz and 13.56 MHz.",
+      "url": "https://github.com/RfidResearchGroup/proxmark3"
+    },
+    {
+      "name": "libnfc",
+      "domain": "embedded",
+      "desc": "Cross-platform NFC reader access library plus nfc-list / nfc-mfclassic.",
+      "url": "https://github.com/nfc-tools/libnfc"
+    },
+    {
+      "name": "mfoc / mfcuk",
+      "domain": "embedded",
+      "desc": "Crack MIFARE Classic keys via known-key offline and Dark Side attacks.",
+      "url": "https://github.com/nfc-tools/mfoc"
+    },
+    {
+      "name": "pcsc-tools",
+      "domain": "embedded",
+      "desc": "PC/SC smartcard listing, ATR parsing, and APDU testing.",
+      "url": "https://pcsc-tools.apdu.fr"
+    },
+    {
+      "name": "opensc",
+      "domain": "embedded",
+      "desc": "Smartcard PKCS#11 stack and tooling (pkcs15-tool, opensc-tool).",
+      "url": "https://github.com/OpenSC/OpenSC"
+    },
+    {
+      "name": "ubertooth-tools",
+      "domain": "embedded",
+      "desc": "Userland for the Ubertooth One BLE / BT sniffer.",
+      "url": "https://github.com/greatscottgadgets/ubertooth"
+    },
+    {
+      "name": "btlejack",
+      "domain": "embedded",
+      "desc": "BLE 4.x / 5.x connection sniffing and hijacking with Micro:bit or BBC nRF.",
+      "url": "https://github.com/virtualabs/btlejack"
+    },
+    {
+      "name": "crackle",
+      "domain": "embedded",
+      "desc": "Crack Bluetooth Low Energy legacy pairing (TK / STK / LTK).",
+      "url": "https://github.com/mikeryan/crackle"
+    },
+    {
+      "name": "android-tools-adb",
+      "domain": "embedded",
+      "desc": "adb + fastboot for talking to Android-based embedded devices.",
+      "url": "https://developer.android.com/tools/adb"
+    },
+    {
+      "name": "imx_usb_loader",
+      "domain": "embedded",
+      "desc": "Load images over USB into NXP i.MX SoCs in serial download mode.",
+      "url": "https://github.com/boundarydevices/imx_usb_loader"
+    },
+    {
+      "name": "rkflashtool",
+      "domain": "embedded",
+      "desc": "Read / write / boot Rockchip SoCs (RK29xx, RK30xx, RK33xx).",
+      "url": "https://github.com/linux-rockchip/rkflashtool"
+    },
+    {
+      "name": "sunxi-tools",
+      "domain": "embedded",
+      "desc": "Allwinner SoC FEL-mode bootstrap and flashing (boards with A10 / A20 / H3 / ...).",
+      "url": "https://github.com/linux-sunxi/sunxi-tools"
+    },
+    {
+      "name": "hashcat",
+      "domain": "embedded",
+      "desc": "GPU-accelerated password / key cracker, useful against firmware secrets and BLE handshakes.",
+      "url": "https://hashcat.net/hashcat"
+    },
+    {
+      "name": "urjtag",
+      "domain": "embedded",
+      "desc": "Boundary-scan JTAG suite for hardware reverse engineering.",
+      "url": "http://urjtag.org"
+    },
+    {
+      "name": "flashrom",
+      "domain": "embedded",
+      "desc": "SPI flash chip read / write / verify.",
+      "url": "https://flashrom.org"
+    },
+    {
+      "name": "chipsec",
+      "domain": "embedded",
+      "desc": "Platform security assessment framework (BIOS/UEFI/SMM).",
+      "url": "https://github.com/chipsec/chipsec"
+    },
+    {
+      "name": "sigrok-cli + pulseview",
+      "domain": "embedded",
+      "desc": "Logic analyzer capture and decode (UART, SPI, I2C, CAN, ...).",
+      "url": "https://sigrok.org"
+    },
+    {
+      "name": "avrdude",
+      "domain": "embedded",
+      "desc": "AVR microcontroller flashing.",
+      "url": "https://github.com/avrdudes/avrdude"
+    },
+    {
+      "name": "esptool",
+      "domain": "embedded",
+      "desc": "ESP8266 / ESP32 flash and ROM dump utility.",
+      "url": "https://github.com/espressif/esptool"
+    },
+    {
+      "name": "stlink-tools",
+      "domain": "embedded",
+      "desc": "ST-Link programmer for STM32 / STM8.",
+      "url": "https://github.com/stlink-org/stlink"
+    },
+    {
+      "name": "dfu-util",
+      "domain": "embedded",
+      "desc": "USB Device Firmware Upgrade utility.",
+      "url": "https://dfu-util.sourceforge.net"
+    },
+    {
+      "name": "i2c-tools / spi-tools",
+      "domain": "embedded",
+      "desc": "Userspace I2C and SPI bit-banging from Linux.",
+      "url": "https://github.com/mhei/linux-i2c-tools"
+    },
+    {
+      "name": "gcc-arm-none-eabi",
+      "domain": "embedded",
+      "desc": "ARM Cortex-M cross-compilation toolchain.",
+      "url": "https://developer.arm.com/downloads/-/gnu-rm"
+    },
+    {
+      "name": "gdb-multiarch",
+      "domain": "embedded",
+      "desc": "Debugger with support for ARM, MIPS, RISC-V, AVR, ...",
+      "url": "https://www.gnu.org/software/gdb"
+    },
+    {
+      "name": "qemu-system / qemu-user",
+      "domain": "embedded",
+      "desc": "Full-system and user-mode emulation for rehosting.",
+      "url": "https://www.qemu.org"
+    },
+    {
+      "name": "gnuradio",
+      "domain": "rf",
+      "desc": "Signal-processing framework for SDR development.",
+      "url": "https://www.gnuradio.org"
+    },
+    {
+      "name": "hackrf",
+      "domain": "rf",
+      "desc": "1 MHz - 6 GHz half-duplex SDR userspace tools.",
+      "url": "https://greatscottgadgets.com/hackrf/"
+    },
+    {
+      "name": "rtl-sdr",
+      "domain": "rf",
+      "desc": "Cheap-as-chips DVB-T dongle SDR drivers and utilities.",
+      "url": "https://osmocom.org/projects/rtl-sdr"
+    },
+    {
+      "name": "airspy",
+      "domain": "rf",
+      "desc": "Airspy R2 / Mini / HF+ Discovery drivers.",
+      "url": "https://airspy.com"
+    },
+    {
+      "name": "soapysdr",
+      "domain": "rf",
+      "desc": "Vendor-neutral SDR abstraction layer.",
+      "url": "https://github.com/pothosware/SoapySDR"
+    },
+    {
+      "name": "gqrx",
+      "domain": "rf",
+      "desc": "GNU-Radio-based spectrum analyzer and demodulator.",
+      "url": "https://gqrx.dk"
+    },
+    {
+      "name": "sdrangel",
+      "domain": "rf",
+      "desc": "Wide-band multi-mode SDR receiver and transmitter.",
+      "url": "https://github.com/f4exb/sdrangel"
+    },
+    {
+      "name": "inspectrum",
+      "domain": "rf",
+      "desc": "Offline visual analysis of captured SDR signals.",
+      "url": "https://github.com/miek/inspectrum"
+    },
+    {
+      "name": "rtl_433",
+      "domain": "rf",
+      "desc": "Decode ISM-band devices: tire pressure, weather, sensors.",
+      "url": "https://github.com/merbanan/rtl_433"
+    },
+    {
+      "name": "multimon-ng",
+      "domain": "rf",
+      "desc": "Decode POCSAG, FLEX, AFSK, DTMF and more.",
+      "url": "https://github.com/EliasOenal/multimon-ng"
+    },
+    {
+      "name": "universal-radio-hacker",
+      "domain": "rf",
+      "desc": "Reverse-engineer wireless protocols visually.",
+      "url": "https://github.com/jopohl/urh"
+    },
+    {
+      "name": "dump1090-fa",
+      "domain": "rf",
+      "desc": "ADS-B Mode S decoder for tracking aircraft.",
+      "url": "https://github.com/flightaware/dump1090"
+    },
+    {
+      "name": "binwalk",
+      "domain": "firmware",
+      "desc": "Firmware extraction and entropy analysis.",
+      "url": "https://github.com/ReFirmLabs/binwalk"
+    },
+    {
+      "name": "emba",
+      "domain": "firmware",
+      "desc": "Modular firmware security analyzer: extraction, static, dynamic, exploit checks.",
+      "url": "https://github.com/e-m-b-a/emba"
+    },
+    {
+      "name": "FACT-core",
+      "domain": "firmware",
+      "desc": "Firmware Analysis and Comparison Tool (FACT), heavy-weight pipeline framework.",
+      "url": "https://github.com/fkie-cad/FACT_core"
+    },
+    {
+      "name": "firmadyne",
+      "domain": "firmware",
+      "desc": "Whole-system emulation of Linux-based firmware for dynamic analysis.",
+      "url": "https://github.com/firmadyne/firmadyne"
+    },
+    {
+      "name": "FirmAE",
+      "domain": "firmware",
+      "desc": "Improved firmware emulator with higher success rate than firmadyne.",
+      "url": "https://github.com/pr0v3rbs/FirmAE"
+    },
+    {
+      "name": "qiling",
+      "domain": "firmware",
+      "desc": "Cross-platform binary emulation framework built on Unicorn.",
+      "url": "https://github.com/qilingframework/qiling"
+    },
+    {
+      "name": "avatar2",
+      "domain": "firmware",
+      "desc": "Hybrid binary analysis orchestrator (QEMU + real hardware + angr).",
+      "url": "https://github.com/avatartwo/avatar2"
+    },
+    {
+      "name": "panda",
+      "domain": "firmware",
+      "desc": "Platform for Architecture-Neutral Dynamic Analysis - whole-system record/replay.",
+      "url": "https://github.com/panda-re/panda"
+    },
+    {
+      "name": "jefferson",
+      "domain": "firmware",
+      "desc": "JFFS2 filesystem extractor (the common embedded NAND filesystem).",
+      "url": "https://github.com/sviehb/jefferson"
+    },
+    {
+      "name": "ubi_reader",
+      "domain": "firmware",
+      "desc": "UBI / UBIFS image extractor and analysis tool.",
+      "url": "https://github.com/jrspruitt/ubi_reader"
+    },
+    {
+      "name": "sasquatch",
+      "domain": "firmware",
+      "desc": "Patched unsquashfs that handles vendor-modified SquashFS headers.",
+      "url": "https://github.com/devttys0/sasquatch"
+    },
+    {
+      "name": "yaffs2utils",
+      "domain": "firmware",
+      "desc": "Read / write YAFFS2, the other NAND filesystem.",
+      "url": "https://github.com/jhautbois/yaffs2utils"
+    },
+    {
+      "name": "mtd-utils",
+      "domain": "firmware",
+      "desc": "jffs2dump, ubinize, nandwrite, mkfs.ubifs - kernel MTD subsystem userland.",
+      "url": "http://www.linux-mtd.infradead.org"
+    },
+    {
+      "name": "u-boot-tools",
+      "domain": "firmware",
+      "desc": "mkimage / dumpimage / fw_printenv for U-Boot images and environments.",
+      "url": "https://github.com/u-boot/u-boot"
+    },
+    {
+      "name": "device-tree-compiler",
+      "domain": "firmware",
+      "desc": "dtc / fdtdump: compile and decompile flattened device trees.",
+      "url": "https://git.kernel.org/pub/scm/utils/dtc/dtc.git"
+    },
+    {
+      "name": "diffoscope",
+      "domain": "firmware",
+      "desc": "Recursive in-depth diff of binaries, firmware images, packages, anything.",
+      "url": "https://diffoscope.org"
+    },
+    {
+      "name": "jadx",
+      "domain": "firmware",
+      "desc": "DEX / APK to Java decompiler - Android-based embedded systems.",
+      "url": "https://github.com/skylot/jadx"
+    },
+    {
+      "name": "apktool",
+      "domain": "firmware",
+      "desc": "Reverse-engineer Android APKs: smali, resources, repackaging.",
+      "url": "https://apktool.org"
+    },
+    {
+      "name": "ROPgadget",
+      "domain": "firmware",
+      "desc": "Search ROP gadgets in ELF / PE / Mach-O binaries.",
+      "url": "https://github.com/JonathanSalwan/ROPgadget"
+    },
+    {
+      "name": "ropper",
+      "domain": "firmware",
+      "desc": "ROP / JOP gadget finder with arch coverage beyond ROPgadget.",
+      "url": "https://github.com/sashs/Ropper"
+    },
+    {
+      "name": "pwndbg / gef",
+      "domain": "firmware",
+      "desc": "GDB plugins for exploit dev: heap inspection, register diff, ROP helpers.",
+      "url": "https://github.com/pwndbg/pwndbg"
+    },
+    {
+      "name": "objection",
+      "domain": "firmware",
+      "desc": "Frida-powered runtime mobile / embedded exploration toolkit.",
+      "url": "https://github.com/sensepost/objection"
+    },
+    {
+      "name": "routersploit",
+      "domain": "firmware",
+      "desc": "Embedded-device exploitation framework (Metasploit-style modules for routers).",
+      "url": "https://github.com/threat9/routersploit"
+    },
+    {
+      "name": "triton",
+      "domain": "firmware",
+      "desc": "Dynamic binary analysis library: SMT solving, taint, symbolic exec.",
+      "url": "https://github.com/JonathanSalwan/Triton"
+    },
+    {
+      "name": "rehoster / renode",
+      "domain": "firmware",
+      "desc": "Functional simulation framework for full embedded systems (Antmicro Renode).",
+      "url": "https://renode.io"
+    },
+    {
+      "name": "one_gadget",
+      "domain": "firmware",
+      "desc": "Find single-call libc gadgets that pop a shell.",
+      "url": "https://github.com/david942j/one_gadget"
+    },
+    {
+      "name": "binaryninja-free",
+      "domain": "firmware",
+      "desc": "Free tier of Binary Ninja for non-commercial reverse engineering.",
+      "url": "https://binary.ninja/free/"
+    },
+    {
+      "name": "patchkit",
+      "domain": "firmware",
+      "desc": "Statically rewrite binaries: insert hooks, replace functions.",
+      "url": "https://github.com/lunixbochs/patchkit"
+    },
+    {
+      "name": "unblob",
+      "domain": "firmware",
+      "desc": "Modern firmware-extraction successor to binwalk.",
+      "url": "https://github.com/onekey-sec/unblob"
+    },
+    {
+      "name": "firmwalker",
+      "domain": "firmware",
+      "desc": "Scan extracted FS for keys, creds, IPs, version markers.",
+      "url": "https://github.com/craigz28/firmwalker"
+    },
+    {
+      "name": "yara",
+      "domain": "firmware",
+      "desc": "Pattern-matching engine for binary classification.",
+      "url": "https://github.com/VirusTotal/yara"
+    },
+    {
+      "name": "radare2 / rizin",
+      "domain": "firmware",
+      "desc": "Reverse engineering framework and disassembler.",
+      "url": "https://rada.re"
+    },
+    {
+      "name": "cutter",
+      "domain": "firmware",
+      "desc": "Qt frontend to rizin with Ghidra decompiler.",
+      "url": "https://cutter.re"
+    },
+    {
+      "name": "ghidra",
+      "domain": "firmware",
+      "desc": "NSA-released reverse engineering platform.",
+      "url": "https://ghidra-sre.org"
+    },
+    {
+      "name": "angr",
+      "domain": "firmware",
+      "desc": "Concolic execution and binary analysis platform.",
+      "url": "https://angr.io"
+    },
+    {
+      "name": "frida",
+      "domain": "firmware",
+      "desc": "Dynamic instrumentation toolkit for running binaries.",
+      "url": "https://frida.re"
+    },
+    {
+      "name": "pwntools",
+      "domain": "firmware",
+      "desc": "CTF / exploit-development swiss army.",
+      "url": "https://github.com/Gallopsled/pwntools"
+    },
+    {
+      "name": "AFL++",
+      "domain": "firmware",
+      "desc": "Coverage-guided fuzzer (community fork of AFL).",
+      "url": "https://github.com/AFLplusplus/AFLplusplus"
+    },
+    {
+      "name": "honggfuzz",
+      "domain": "firmware",
+      "desc": "Google's security-oriented fuzzer.",
+      "url": "https://github.com/google/honggfuzz"
+    },
+    {
+      "name": "unicorn engine",
+      "domain": "firmware",
+      "desc": "Lightweight CPU emulator for selective rehosting.",
+      "url": "https://www.unicorn-engine.org"
+    },
+    {
+      "name": "lief",
+      "domain": "firmware",
+      "desc": "Parse, modify, abstract ELF / PE / Mach-O / DEX.",
+      "url": "https://lief-project.github.io"
+    },
+    {
+      "name": "sleuthkit + autopsy",
+      "domain": "forensics",
+      "desc": "Filesystem analysis (FAT, ext, NTFS, HFS+, SquashFS).",
+      "url": "https://www.sleuthkit.org"
+    },
+    {
+      "name": "volatility3",
+      "domain": "forensics",
+      "desc": "Memory forensics framework for Linux, macOS, Windows.",
+      "url": "https://github.com/volatilityfoundation/volatility3"
+    },
+    {
+      "name": "plaso / log2timeline",
+      "domain": "forensics",
+      "desc": "Timeline generation from forensic artifacts.",
+      "url": "https://plaso.readthedocs.io"
+    },
+    {
+      "name": "dc3dd / dcfldd",
+      "domain": "forensics",
+      "desc": "Forensic disk imaging with hash verification.",
+      "url": "https://sourceforge.net/projects/dc3dd"
+    },
+    {
+      "name": "ewf-tools",
+      "domain": "forensics",
+      "desc": "EnCase (E01) image read/write.",
+      "url": "https://github.com/libyal/libewf"
+    },
+    {
+      "name": "foremost / scalpel",
+      "domain": "forensics",
+      "desc": "File carving from raw / damaged media.",
+      "url": "https://foremost.sourceforge.net"
+    },
+    {
+      "name": "testdisk / photorec",
+      "domain": "forensics",
+      "desc": "Recover lost partitions and deleted files.",
+      "url": "https://www.cgsecurity.org/wiki/TestDisk"
+    },
+    {
+      "name": "exiftool",
+      "domain": "forensics",
+      "desc": "Read / write metadata across hundreds of formats.",
+      "url": "https://exiftool.org"
+    },
+    {
+      "name": "nmap",
+      "domain": "core",
+      "desc": "Network and service discovery.",
+      "url": "https://nmap.org"
+    },
+    {
+      "name": "wireshark / tshark",
+      "domain": "core",
+      "desc": "Packet capture and dissection with deep IoT/OT support.",
+      "url": "https://www.wireshark.org"
+    },
+    {
+      "name": "tcpdump",
+      "domain": "core",
+      "desc": "Low-level packet sniffer.",
+      "url": "https://www.tcpdump.org"
+    },
+    {
+      "name": "scapy (via python3)",
+      "domain": "core",
+      "desc": "Packet manipulation library used by half the IoT/ICS tools above.",
+      "url": "https://scapy.net"
+    },
+    {
+      "name": "python3 + pipx",
+      "domain": "core",
+      "desc": "Default scripting environment with isolated tool installs.",
+      "url": "https://www.python.org"
+    },
+    {
+      "name": "neovim / vim",
+      "domain": "core",
+      "desc": "Editors that don't require a mouse.",
+      "url": "https://neovim.io"
+    },
+    {
+      "name": "tmux",
+      "domain": "core",
+      "desc": "Terminal multiplexer for long-running captures.",
+      "url": "https://github.com/tmux/tmux"
+    },
+    {
+      "name": "ripgrep / fd / bat",
+      "domain": "core",
+      "desc": "Modern grep / find / cat replacements.",
+      "url": "https://github.com/BurntSushi/ripgrep"
+    },
+    {
+      "name": "bluez-tools",
+      "domain": "bluetooth",
+      "desc": "sdptool, l2ping, rfcomm, hciconfig - the BlueZ userland.",
+      "url": "http://www.bluez.org"
+    },
+    {
+      "name": "btmon",
+      "domain": "bluetooth",
+      "desc": "Live HCI packet capture and decoder built into BlueZ.",
+      "url": "https://github.com/bluez/bluez/blob/master/monitor/main.c"
+    },
+    {
+      "name": "bluez-hcidump",
+      "domain": "bluetooth",
+      "desc": "Low-level Bluetooth packet dump for offline analysis.",
+      "url": "https://github.com/pauloborges/bluez"
+    },
+    {
+      "name": "gatttool",
+      "domain": "bluetooth",
+      "desc": "GATT client for poking BLE characteristics from the shell.",
+      "url": "http://www.bluez.org"
+    },
+    {
+      "name": "bluepy",
+      "domain": "bluetooth",
+      "desc": "Python BLE library: scan, connect, GATT read/write/subscribe.",
+      "url": "https://github.com/IanHarvey/bluepy"
+    },
+    {
+      "name": "bleak",
+      "domain": "bluetooth",
+      "desc": "Cross-platform Python BLE client (Linux, macOS, Windows).",
+      "url": "https://github.com/hbldh/bleak"
+    },
+    {
+      "name": "bluescan",
+      "domain": "bluetooth",
+      "desc": "Bluetooth Classic + LE scanner with vendor / service enumeration.",
+      "url": "https://github.com/fO-000/bluescan"
+    },
+    {
+      "name": "blueranger",
+      "domain": "bluetooth",
+      "desc": "Identify Bluetooth devices and locate them via signal strength.",
+      "url": "https://github.com/jpdias/blueranger"
+    },
+    {
+      "name": "spooftooph",
+      "domain": "bluetooth",
+      "desc": "Spoof Bluetooth device name, class, and MAC address.",
+      "url": "https://gitlab.com/kalilinux/packages/spooftooph"
+    },
+    {
+      "name": "bluesnarfer",
+      "domain": "bluetooth",
+      "desc": "Bluetooth information extraction proof-of-concept.",
+      "url": "https://gitlab.com/kalilinux/packages/bluesnarfer"
+    },
+    {
+      "name": "BLEAH",
+      "domain": "bluetooth",
+      "desc": "BLE smart device scanner and characteristic enumerator.",
+      "url": "https://github.com/evilsocket/bleah"
+    },
+    {
+      "name": "gattacker",
+      "domain": "bluetooth",
+      "desc": "BLE man-in-the-middle relay and fuzzing tool.",
+      "url": "https://github.com/securing/gattacker"
+    },
+    {
+      "name": "btproxy",
+      "domain": "bluetooth",
+      "desc": "Transparent Bluetooth Classic MITM proxy.",
+      "url": "https://github.com/conorpp/btproxy"
+    },
+    {
+      "name": "redfang",
+      "domain": "bluetooth",
+      "desc": "Brute-force Bluetooth address discovery for non-discoverable devices.",
+      "url": "https://gitlab.com/kalilinux/packages/redfang"
+    },
+    {
+      "name": "bluetility",
+      "domain": "bluetooth",
+      "desc": "GUI BLE explorer for inspecting services and characteristics.",
+      "url": "https://github.com/jnross/Bluetility"
+    },
+    {
+      "name": "nrf-sniffer",
+      "domain": "bluetooth",
+      "desc": "Nordic nRF52 Bluetooth sniffer with Wireshark plugin.",
+      "url": "https://www.nordicsemi.com/Products/Development-tools/nrf-sniffer-for-bluetooth-le"
+    },
+    {
+      "name": "microbit-bluetooth",
+      "domain": "bluetooth",
+      "desc": "BBC Micro:bit firmware for BLE sniffing with btlejack.",
+      "url": "https://github.com/virtualabs/btlejack-firmware"
+    },
+    {
+      "name": "airmon-ng",
+      "domain": "wifi",
+      "desc": "Toggle Wi-Fi interfaces into monitor mode safely.",
+      "url": "https://www.aircrack-ng.org/doku.php?id=airmon-ng"
+    },
+    {
+      "name": "airodump-ng",
+      "domain": "wifi",
+      "desc": "Wi-Fi packet capture and AP / client enumeration.",
+      "url": "https://www.aircrack-ng.org/doku.php?id=airodump-ng"
+    },
+    {
+      "name": "airbase-ng",
+      "domain": "wifi",
+      "desc": "Multi-purpose rogue AP and karma-style attack tool.",
+      "url": "https://www.aircrack-ng.org/doku.php?id=airbase-ng"
+    },
+    {
+      "name": "hostapd",
+      "domain": "wifi",
+      "desc": "Daemon for running an evil-twin or test AP.",
+      "url": "https://w1.fi/hostapd/"
+    },
+    {
+      "name": "wpa_supplicant",
+      "domain": "wifi",
+      "desc": "WPA supplicant for connecting to enterprise / personal Wi-Fi during tests.",
+      "url": "https://w1.fi/wpa_supplicant/"
+    },
+    {
+      "name": "bully",
+      "domain": "wifi",
+      "desc": "WPS PIN brute-force, alternative to reaver.",
+      "url": "https://github.com/aanarchyy/bully"
+    },
+    {
+      "name": "pixiewps",
+      "domain": "wifi",
+      "desc": "Offline WPS PIN recovery via pixie-dust attack.",
+      "url": "https://github.com/wiire-a/pixiewps"
+    },
+    {
+      "name": "wifiphisher",
+      "domain": "wifi",
+      "desc": "Rogue-AP framework for phishing Wi-Fi credentials.",
+      "url": "https://github.com/wifiphisher/wifiphisher"
+    },
+    {
+      "name": "eaphammer",
+      "domain": "wifi",
+      "desc": "Targeted attacks against WPA2-Enterprise networks.",
+      "url": "https://github.com/s0lst1c3/eaphammer"
+    },
+    {
+      "name": "wifipumpkin3",
+      "domain": "wifi",
+      "desc": "Rogue AP framework with credential harvesting modules.",
+      "url": "https://github.com/P0cL4bs/wifipumpkin3"
+    },
+    {
+      "name": "fern-wifi-cracker",
+      "domain": "wifi",
+      "desc": "GUI front-end for Wi-Fi auditing wrappers around aircrack.",
+      "url": "https://github.com/savio-code/fern-wifi-cracker"
+    },
+    {
+      "name": "mdk4",
+      "domain": "wifi",
+      "desc": "Wi-Fi testing tool: beacon flood, deauth, fake-AP, EAPOL.",
+      "url": "https://github.com/aircrack-ng/mdk4"
+    },
+    {
+      "name": "linssid",
+      "domain": "wifi",
+      "desc": "GUI tool to inspect SSIDs, channels, signal strength.",
+      "url": "https://sourceforge.net/projects/linssid/"
+    },
+    {
+      "name": "libnfc-bin",
+      "domain": "nfc",
+      "desc": "nfc-list, nfc-mfclassic, nfc-relay - the libnfc CLI suite.",
+      "url": "https://github.com/nfc-tools/libnfc"
+    },
+    {
+      "name": "libfreefare",
+      "domain": "nfc",
+      "desc": "High-level NFC card abstraction (MIFARE Classic, Ultralight, DESFire).",
+      "url": "https://github.com/nfc-tools/libfreefare"
+    },
+    {
+      "name": "nfcpy",
+      "domain": "nfc",
+      "desc": "Pure-Python NFC stack supporting PN531 / PN532 / PN533 readers.",
+      "url": "https://github.com/nfcpy/nfcpy"
+    },
+    {
+      "name": "mfdread",
+      "domain": "nfc",
+      "desc": "Decode MIFARE Classic dumps into a human-readable layout.",
+      "url": "https://github.com/zhovner/mfdread"
+    },
+    {
+      "name": "mifare-classic-toolkit",
+      "domain": "nfc",
+      "desc": "CLI toolkit for analyzing MIFARE Classic dump files.",
+      "url": "https://gitlab.com/cybersectroop/mifare-classic-toolkit"
+    },
+    {
+      "name": "chameleon-mini",
+      "domain": "nfc",
+      "desc": "Host tools for the ChameleonMini contactless card emulator.",
+      "url": "https://github.com/emsec/ChameleonMini"
+    },
+    {
+      "name": "chameleon-ultra",
+      "domain": "nfc",
+      "desc": "Host tools for the newer ChameleonUltra emulator and sniffer.",
+      "url": "https://github.com/RfidResearchGroup/ChameleonUltra"
+    },
+    {
+      "name": "globalplatform",
+      "domain": "nfc",
+      "desc": "GlobalPlatform Pro (gp) - JavaCard applet install / list / delete.",
+      "url": "https://github.com/martinpaljak/GlobalPlatformPro"
+    },
+    {
+      "name": "pkcs11-tool",
+      "domain": "nfc",
+      "desc": "Test, list, and exercise PKCS#11-compliant smartcard tokens.",
+      "url": "https://github.com/OpenSC/OpenSC"
+    },
+    {
+      "name": "pcscd",
+      "domain": "nfc",
+      "desc": "PC/SC smartcard daemon (with libccid for USB readers).",
+      "url": "https://pcsclite.apdu.fr/"
+    },
+    {
+      "name": "nfcgate",
+      "domain": "nfc",
+      "desc": "Android NFC relay framework for traffic interception.",
+      "url": "https://github.com/nfcgate/nfcgate"
+    },
+    {
+      "name": "flipperzero-firmware-cli",
+      "domain": "nfc",
+      "desc": "Host tools for Flipper Zero (RFID/NFC/IR/sub-GHz fob).",
+      "url": "https://github.com/flipperdevices/flipperzero-firmware"
+    },
+    {
+      "name": "masscan",
+      "domain": "network",
+      "desc": "Internet-scale TCP port scanner, claims 10M packets/s.",
+      "url": "https://github.com/robertdavidgraham/masscan"
+    },
+    {
+      "name": "zmap",
+      "domain": "network",
+      "desc": "Stateless single-port internet-wide scanner.",
+      "url": "https://zmap.io"
+    },
+    {
+      "name": "naabu",
+      "domain": "network",
+      "desc": "Fast port scanner (ProjectDiscovery) with nmap integration.",
+      "url": "https://github.com/projectdiscovery/naabu"
+    },
+    {
+      "name": "httpx",
+      "domain": "network",
+      "desc": "Probe HTTP services on a list of hosts at high concurrency.",
+      "url": "https://github.com/projectdiscovery/httpx"
+    },
+    {
+      "name": "nuclei",
+      "domain": "network",
+      "desc": "Template-based vulnerability scanner.",
+      "url": "https://github.com/projectdiscovery/nuclei"
+    },
+    {
+      "name": "subfinder",
+      "domain": "network",
+      "desc": "Passive subdomain enumeration via many sources.",
+      "url": "https://github.com/projectdiscovery/subfinder"
+    },
+    {
+      "name": "amass",
+      "domain": "network",
+      "desc": "External attack-surface mapping (subdomains, ASN, certs).",
+      "url": "https://github.com/owasp-amass/amass"
+    },
+    {
+      "name": "dnsenum",
+      "domain": "network",
+      "desc": "DNS enumeration: hosts, subdomains, MX, NS, range scans.",
+      "url": "https://github.com/fwaeytens/dnsenum"
+    },
+    {
+      "name": "dnsrecon",
+      "domain": "network",
+      "desc": "DNS recon with wildcard detection and zone transfer.",
+      "url": "https://github.com/darkoperator/dnsrecon"
+    },
+    {
+      "name": "dnstwist",
+      "domain": "network",
+      "desc": "Find typo-squatting and homograph domains for IoT cloud assets.",
+      "url": "https://github.com/elceef/dnstwist"
+    },
+    {
+      "name": "ffuf",
+      "domain": "network",
+      "desc": "Fast web fuzzer for paths, vhosts, params, headers.",
+      "url": "https://github.com/ffuf/ffuf"
+    },
+    {
+      "name": "gobuster",
+      "domain": "network",
+      "desc": "Brute-force DNS / dir / vhost / S3 buckets.",
+      "url": "https://github.com/OJ/gobuster"
+    },
+    {
+      "name": "wfuzz",
+      "domain": "network",
+      "desc": "HTTP request fuzzer with many payload providers.",
+      "url": "https://github.com/xmendez/wfuzz"
+    },
+    {
+      "name": "responder",
+      "domain": "network",
+      "desc": "LLMNR / NBT-NS / mDNS poisoner.",
+      "url": "https://github.com/lgandx/Responder"
+    },
+    {
+      "name": "mitm6",
+      "domain": "network",
+      "desc": "IPv6-based DHCPv6 attack to redirect Windows / IoT traffic.",
+      "url": "https://github.com/dirkjanm/mitm6"
+    },
+    {
+      "name": "arp-scan",
+      "domain": "network",
+      "desc": "ARP discovery across a LAN segment.",
+      "url": "https://github.com/royhills/arp-scan"
+    },
+    {
+      "name": "ettercap",
+      "domain": "network",
+      "desc": "Classic LAN sniffer / interceptor / MITM.",
+      "url": "https://www.ettercap-project.org"
+    },
+    {
+      "name": "dsniff",
+      "domain": "network",
+      "desc": "Suite of LAN sniffing tools (arpspoof, dnsspoof, sshmitm, ...).",
+      "url": "https://www.monkey.org/~dugsong/dsniff/"
+    },
+    {
+      "name": "crackmapexec",
+      "domain": "network",
+      "desc": "Network-wide credential testing across SMB / WinRM / LDAP / MSSQL.",
+      "url": "https://github.com/Pennyw0rth/CrackMapExec"
+    },
+    {
+      "name": "impacket-scripts",
+      "domain": "network",
+      "desc": "psexec, smbexec, secretsdump, ntlmrelayx, GetUserSPNs.",
+      "url": "https://github.com/fortra/impacket"
+    },
+    {
+      "name": "enum4linux-ng",
+      "domain": "network",
+      "desc": "Modern Python rewrite of enum4linux for SMB enumeration.",
+      "url": "https://github.com/cddmp/enum4linux-ng"
+    },
+    {
+      "name": "onesixtyone",
+      "domain": "network",
+      "desc": "Fast SNMPv1 community-string brute-forcer.",
+      "url": "https://github.com/trailofbits/onesixtyone"
+    },
+    {
+      "name": "snmpwalk",
+      "domain": "network",
+      "desc": "Net-SNMP CLI for tree walks against SNMP devices.",
+      "url": "https://www.net-snmp.org"
+    },
+    {
+      "name": "proxychains4",
+      "domain": "network",
+      "desc": "Force any TCP connection through SOCKS / HTTP / TOR proxies.",
+      "url": "https://github.com/rofl0r/proxychains-ng"
+    },
+    {
+      "name": "tor",
+      "domain": "network",
+      "desc": "Onion routing daemon for anonymized scanning, where authorized.",
+      "url": "https://www.torproject.org"
+    },
+    {
+      "name": "ssh-audit",
+      "domain": "network",
+      "desc": "Audit SSH server / client config for weak ciphers and protocols.",
+      "url": "https://github.com/jtesta/ssh-audit"
+    },
+    {
+      "name": "wafw00f",
+      "domain": "network",
+      "desc": "Fingerprint WAFs in front of IoT cloud endpoints.",
+      "url": "https://github.com/EnableSecurity/wafw00f"
+    },
+    {
+      "name": "yersinia",
+      "domain": "network",
+      "desc": "Layer-2 attack suite (STP, CDP, DHCP, HSRP, 802.1Q, DTP).",
+      "url": "https://github.com/tomac/yersinia"
+    },
+    {
+      "name": "iodine",
+      "domain": "network",
+      "desc": "Tunnel IPv4 over DNS - covert C2 channel detection / use.",
+      "url": "https://github.com/yarrick/iodine"
+    },
+    {
+      "name": "hardax",
+      "domain": "android",
+      "desc": "Android hardening auditor: 728 checks across 25 categories (akhanda team).",
+      "url": "https://github.com/V33RU/hardax"
+    },
+    {
+      "name": "android-tools-adb",
+      "domain": "android",
+      "desc": "adb - host side of the Android Debug Bridge.",
+      "url": "https://developer.android.com/tools/adb"
+    },
+    {
+      "name": "android-tools-fastboot",
+      "domain": "android",
+      "desc": "fastboot - bootloader-level flashing and unlocking.",
+      "url": "https://developer.android.com/tools/releases/platform-tools"
+    },
+    {
+      "name": "apktool-android",
+      "domain": "android",
+      "desc": "Disassemble / reassemble APKs, edit smali, repackage.",
+      "url": "https://apktool.org"
+    },
+    {
+      "name": "jadx-android",
+      "domain": "android",
+      "desc": "Decompile DEX / APK to readable Java source.",
+      "url": "https://github.com/skylot/jadx"
+    },
+    {
+      "name": "dex2jar",
+      "domain": "android",
+      "desc": "Convert Android DEX to JAR for analysis in Java tools.",
+      "url": "https://github.com/pxb1988/dex2jar"
+    },
+    {
+      "name": "smali",
+      "domain": "android",
+      "desc": "Disassembler / assembler for the DEX bytecode (Smali / Baksmali).",
+      "url": "https://github.com/JesusFreke/smali"
+    },
+    {
+      "name": "drozer",
+      "domain": "android",
+      "desc": "Comprehensive Android security framework - IPC, providers, intents.",
+      "url": "https://github.com/WithSecureLabs/drozer"
+    },
+    {
+      "name": "mobsf",
+      "domain": "android",
+      "desc": "Mobile Security Framework: static + dynamic + malware analysis for APKs.",
+      "url": "https://github.com/MobSF/Mobile-Security-Framework-MobSF"
+    },
+    {
+      "name": "objection-android",
+      "domain": "android",
+      "desc": "Frida-powered runtime mobile exploration toolkit.",
+      "url": "https://github.com/sensepost/objection"
+    },
+    {
+      "name": "frida-android",
+      "domain": "android",
+      "desc": "Dynamic instrumentation for running Android processes.",
+      "url": "https://frida.re"
+    },
+    {
+      "name": "frida-tools",
+      "domain": "android",
+      "desc": "frida-trace, frida-ps, frida-discover, frida-kill, frida-ls-devices.",
+      "url": "https://github.com/frida/frida-tools"
+    },
+    {
+      "name": "scrcpy",
+      "domain": "android",
+      "desc": "Mirror and control an Android device over USB / TCP with no root.",
+      "url": "https://github.com/Genymobile/scrcpy"
+    },
+    {
+      "name": "apkid",
+      "domain": "android",
+      "desc": "Identify APK protectors, packers, obfuscators, anti-VM markers.",
+      "url": "https://github.com/rednaga/APKiD"
+    },
+    {
+      "name": "apkleaks",
+      "domain": "android",
+      "desc": "Scan APKs for URIs, endpoints, secrets, tokens.",
+      "url": "https://github.com/dwisiswant0/apkleaks"
+    },
+    {
+      "name": "quark-engine",
+      "domain": "android",
+      "desc": "Android malware analysis using risk score weighting.",
+      "url": "https://github.com/quark-engine/quark-engine"
+    },
+    {
+      "name": "enjarify",
+      "domain": "android",
+      "desc": "Translate DEX to Java bytecode (alternative to dex2jar).",
+      "url": "https://github.com/google/enjarify"
+    },
+    {
+      "name": "abe-jar",
+      "domain": "android",
+      "desc": "Android Backup Extractor - convert .ab backups to tar.",
+      "url": "https://github.com/nelenkov/android-backup-extractor"
+    },
+    {
+      "name": "magisk-tools",
+      "domain": "android",
+      "desc": "Magisk binary and modules for rooting and Zygisk hooks.",
+      "url": "https://github.com/topjohnwu/Magisk"
+    },
+    {
+      "name": "nuclei-android-templates",
+      "domain": "android",
+      "desc": "Nuclei templates targeting mobile app endpoints.",
+      "url": "https://github.com/projectdiscovery/nuclei-templates"
+    }
   ]
 }

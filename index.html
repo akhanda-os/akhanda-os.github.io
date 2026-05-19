@@ -36,9 +36,16 @@
 
   <main>
     <section class="hero container">
-      <div class="prompt">akhanda@os:~$ whoami</div>
-      <h1 class="glow glitch" data-text="Embedded Hacking OS">Embedded Hacking OS</h1>
-      <div class="tagline">Built for the wires, the radios, the silicon.<span class="cursor"></span></div>
+      <div class="boot-line">[ <span class="ok">+</span> ] akhanda-os v0.1.0-alpha &middot; amd64 &middot; ready</div>
+
+      <h1 class="wordmark" aria-label="akhanda">
+        <span>a</span><span>k</span><span>h</span><span>a</span><span>n</span><span>d</span><span>a</span>
+      </h1>
+
+      <div class="rule"></div>
+
+      <div class="subtitle">EMBEDDED &nbsp; / &nbsp; HACKING &nbsp; / &nbsp; OS</div>
+      <p class="tagline">for the wires, the radios, the silicon<span class="cursor"></span></p>
 
       <div class="domains">
         <span class="pill">IoT</span>
@@ -51,7 +58,7 @@
         <span class="pill">Forensics</span>
       </div>
 
-      <div>
+      <div class="cta-row">
         <a class="cta primary" href="download.html">$ download iso</a>
         <a class="cta" href="tools.html">$ list tools</a>
         <a class="cta" href="https://github.com/akhanda-os/akhanda-os" target="_blank" rel="noopener">$ source</a>
@@ -140,23 +147,38 @@
     </section>
 
     <section class="container">
-      <h2>// vs kali linux</h2>
-      <p class="section-sub">We do not compete on IT pentesting. We dominate the surfaces Kali leaves bare.</p>
-      <table>
-        <thead>
-          <tr><th></th><th>Kali Linux</th><th>akhanda-os</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Primary target</td>            <td class="no">IT / web / network</td>     <td class="yes">OT / IoT / embedded / cyber-physical</td></tr>
-          <tr><td>CAN bus, ECU diagnostics</td>  <td class="no">Manual install</td>          <td class="yes">First-class, vcan0 up at boot</td></tr>
-          <tr><td>ICS protocols (Modbus, S7, BACnet)</td><td class="no">A handful</td>      <td class="yes">Full stack + conpot honeypot</td></tr>
-          <tr><td>DICOM, HL7, FHIR</td>          <td class="no">None</td>                    <td class="yes">First-class</td></tr>
-          <tr><td>Firmware analysis</td>         <td class="no">binwalk only</td>            <td class="yes">binwalk + unblob + firmwalker + emba</td></tr>
-          <tr><td>RF / SDR</td>                  <td class="no">Few packages</td>            <td class="yes">Full GNU Radio + URH + SDR++ stack</td></tr>
-          <tr><td>Hardware probes (J-Link, Glasgow, Flipper, ...)</td><td class="no">Manual udev rules</td><td class="yes">Preconfigured</td></tr>
-          <tr><td>Default network posture</td>   <td class="no">Open</td>                    <td class="yes">Lab-isolated, opt-in to open</td></tr>
-        </tbody>
-      </table>
+      <h2>// principles</h2>
+      <p class="section-sub">What you can count on from every release.</p>
+      <div class="grid grid-2">
+        <article class="card"><span class="tag">no fluff</span>
+          <h3>Only tools that get used in the field</h3>
+          <p>Curated, not exhaustive. Every package in a metapackage has a real use case for IoT, automotive, ICS, medical, embedded, RF, or firmware work. Nothing shipped just to inflate the count.</p>
+        </article>
+        <article class="card"><span class="tag">no surprises</span>
+          <h3>Signed apt repo, reproducible where Debian is</h3>
+          <p>Every .deb is signed by an offline release key. SHA256 + SHA512 + detached PGP for every ISO. SBOM published per release. We track upstream CVEs against shipped versions.</p>
+        </article>
+        <article class="card"><span class="tag">no defaults that bite</span>
+          <h3>Lab-isolated networking on first boot</h3>
+          <p>nftables blocks every outbound port except DNS and apt. ICS ports are allowed only on a designated lab interface. Switching to open mode is one command, logged, and intentional.</p>
+        </article>
+        <article class="card"><span class="tag">no closed source</span>
+          <h3>Pure OSS in the base image</h3>
+          <p>Every tool inside the metapackages ships under an OSI-approved license. Closed-source vendor tools (IDA, Codenomicon, vendor IDEs) get install scripts, not silent bundling.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>// at a glance</h2>
+      <div class="stats">
+        <div class="stat"><div class="n">137<sup>+</sup></div><div class="l">tools shipped</div></div>
+        <div class="stat"><div class="n">11</div><div class="l">menu categories</div></div>
+        <div class="stat"><div class="n">9</div><div class="l">domain metapackages</div></div>
+        <div class="stat"><div class="n">amd64</div><div class="l">v0.x architecture</div></div>
+        <div class="stat"><div class="n">GPL-3</div><div class="l">license</div></div>
+        <div class="stat"><div class="n">debian</div><div class="l">base + live-build</div></div>
+      </div>
     </section>
 
     <section class="container">

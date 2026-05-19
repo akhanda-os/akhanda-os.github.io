@@ -109,32 +109,110 @@ header.site {
 }
 .nav-links a:hover { color: var(--accent); }
 
-/* Hero */
+/* ============ HERO ============ */
 .hero {
-  padding: 90px 0 64px;
+  padding: 96px 0 72px;
   text-align: center;
+  position: relative;
 }
-.hero .prompt {
-  font-family: var(--font-mono); color: var(--accent);
-  font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 0.05em;
+
+/* CRT scanlines across the hero only.
+   1px transparent / 2px subtle dark stripes - very faint. */
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.08) 3px,
+    rgba(0, 0, 0, 0.08) 3px
+  );
+  pointer-events: none;
+  z-index: 1;
 }
-.hero .prompt::before { content: "$ "; color: var(--fg-mute); }
-.hero h1 {
-  font-weight: 700;
-  background: linear-gradient(120deg, var(--fg) 0%, var(--accent) 60%, var(--accent-2) 100%);
+.hero > * { position: relative; z-index: 2; }
+
+/* Boot status line above the wordmark */
+.hero .boot-line {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--fg-mute);
+  letter-spacing: 0.04em;
+  margin-bottom: 36px;
+}
+.hero .boot-line .ok { color: var(--accent); font-weight: 700; }
+
+/* THE wordmark - hero brand. Big, custom, distinctive. */
+.wordmark {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: clamp(4.5rem, 18vw, 14rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 0 0 18px;
+  display: flex;
+  justify-content: center;
+  gap: 0.02em;
+  user-select: none;
+}
+.wordmark span {
+  display: inline-block;
+  background: linear-gradient(180deg,
+    #ffffff 0%,
+    #d8fff0 35%,
+    var(--accent) 70%,
+    #00b87a 100%);
   -webkit-background-clip: text; background-clip: text;
   color: transparent;
+  filter: drop-shadow(0 0 22px rgba(0, 255, 157, 0.18));
+  transform-origin: 50% 70%;
+  animation: float 6s ease-in-out infinite;
 }
+/* Stagger the gentle float so the letters do not move together */
+.wordmark span:nth-child(2) { animation-delay: 0.4s; }
+.wordmark span:nth-child(3) { animation-delay: 0.8s; }
+.wordmark span:nth-child(4) { animation-delay: 1.2s; }
+.wordmark span:nth-child(5) { animation-delay: 1.6s; }
+.wordmark span:nth-child(6) { animation-delay: 2.0s; }
+.wordmark span:nth-child(7) { animation-delay: 2.4s; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+/* Hairline neon divider under the wordmark */
+.hero .rule {
+  width: 96px; height: 1px; margin: 4px auto 22px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  box-shadow: 0 0 12px rgba(0, 255, 157, 0.5);
+}
+
+/* "EMBEDDED / HACKING / OS" as a clean caption, not a headline */
+.hero .subtitle {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 1vw + 0.4rem, 1.05rem);
+  font-weight: 500;
+  color: var(--fg);
+  letter-spacing: 0.5em;
+  margin: 0 0 8px;
+  padding-left: 0.5em; /* visually balance the wide tracking */
+}
+
 .hero .tagline {
-  font-family: var(--font-mono); color: var(--fg-dim);
-  font-size: 1.05rem; margin: 8px 0 28px;
+  font-family: var(--font-mono);
+  color: var(--fg-dim);
+  font-size: 0.98rem;
+  margin: 6px 0 32px;
 }
 .hero .tagline .cursor {
   display: inline-block; width: 9px; height: 1.05em;
-  background: var(--accent); margin-left: 2px; vertical-align: middle;
+  background: var(--accent); margin-left: 4px; vertical-align: middle;
   animation: blink 1s steps(2) infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
+
+.cta-row { margin-top: 36px; }
 
 .hero .domains {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 24px 0 36px;
@@ -311,31 +389,37 @@ footer a:hover { color: var(--accent); }
   background: var(--panel-2); border: 1px solid var(--border); color: var(--fg);
 }
 
-/* Glitch (used sparingly) */
-.glitch { position: relative; display: inline-block; }
-.glitch::before, .glitch::after {
-  content: attr(data-text); position: absolute; left: 0; top: 0; width: 100%;
-  overflow: hidden;
+/* Stats grid (// at a glance) */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px;
 }
-.glitch::before {
-  color: var(--accent-3); clip-path: inset(0 0 60% 0);
-  transform: translate(2px, -1px);
-  animation: glitch-1 3s infinite linear alternate-reverse;
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  text-align: center;
+  transition: border-color 150ms ease, transform 150ms ease;
 }
-.glitch::after {
-  color: var(--link); clip-path: inset(60% 0 0 0);
-  transform: translate(-2px, 1px);
-  animation: glitch-2 2.5s infinite linear alternate-reverse;
+.stat:hover { border-color: var(--accent); transform: translateY(-2px); }
+.stat .n {
+  font-family: var(--font-mono);
+  font-size: clamp(1.6rem, 1vw + 1.2rem, 2.1rem);
+  font-weight: 700;
+  background: linear-gradient(180deg, var(--fg), var(--accent));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  line-height: 1.1;
 }
-@keyframes glitch-1 {
-  0% { clip-path: inset(0 0 80% 0); }
-  50% { clip-path: inset(40% 0 40% 0); }
-  100% { clip-path: inset(80% 0 0 0); }
-}
-@keyframes glitch-2 {
-  0% { clip-path: inset(80% 0 0 0); }
-  50% { clip-path: inset(20% 0 60% 0); }
-  100% { clip-path: inset(0 0 80% 0); }
+.stat .n sup { font-size: 0.55em; color: var(--accent); }
+.stat .l {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--fg-mute);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 6px;
 }
 
 @media (max-width: 640px) {

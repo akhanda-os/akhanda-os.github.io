@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>download | akhanda-os</title>
+  <meta name="description" content="Download the akhanda-os live ISO, VM appliances, or add the apt repo to your existing Debian / Kali install.">
+  <link rel="icon" type="image/png" href="assets/img/akhanda.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+
+  <header class="site">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="assets/img/akhanda.png" alt="">
+        <span>akhanda<span class="dot">-</span>os</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">~/</a>
+        <a href="tools.html">tools</a>
+        <a href="download.html">download</a>
+        <a href="https://github.com/akhanda-os/akhanda-os" target="_blank" rel="noopener">github</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" style="padding-top:48px">
+      <div class="prompt mono" style="color:var(--accent);font-size:0.9rem;">$ akhanda-os --download</div>
+      <h1 style="font-size:clamp(1.8rem,2vw+1rem,2.6rem);margin-top:8px;">// download</h1>
+      <p class="muted" style="max-width:720px;">
+        v0.1 releases ship <strong>amd64 only</strong>. Pick the format that matches your workflow.
+        Add the apt repo to an existing Debian or Kali install for the lightest footprint.
+      </p>
+    </section>
+
+    <section class="container">
+      <h2>// option 1 - live iso</h2>
+      <p class="section-sub">Boot from USB, or run in a VM. Persistence opt-in.</p>
+      <div class="grid grid-2">
+        <article class="card">
+          <span class="tag">recommended</span>
+          <h3>akhanda-os-everything-amd64.iso</h3>
+          <p>Full image with every domain metapackage installed. ~6 GB. Use for general assessment work.</p>
+          <p style="margin-top:12px;">
+            <a class="cta primary" href="https://github.com/akhanda-os/akhanda-os/releases/latest">$ get latest release</a>
+          </p>
+        </article>
+        <article class="card">
+          <span class="tag">slim</span>
+          <h3>akhanda-os-iot-edition-amd64.iso</h3>
+          <p>IoT + RF + Core only. ~2.5 GB. Faster to boot, lighter on USB drives, perfect for field BLE / Wi-Fi / SDR work.</p>
+          <p style="margin-top:12px;">
+            <a class="cta" href="https://github.com/akhanda-os/akhanda-os/releases/latest">$ get latest release</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>// option 2 - vm appliances</h2>
+      <p class="section-sub">For lab use. Boots straight into the desktop, no installer step.</p>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>akhanda-os.qcow2</h3>
+          <p>QEMU / KVM / Proxmox. 40 GiB sparse disk. Default user <code>akhanda</code> / <code>akhanda</code>.</p>
+        </article>
+        <article class="card">
+          <h3>akhanda-os.ova</h3>
+          <p>VMware Workstation, VirtualBox, ESXi. Same disk image wrapped in an OVF descriptor.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>// option 3 - apt repo on existing host</h2>
+      <p class="section-sub">Run akhanda-os tools on your current Debian 12+ or Kali rolling install.</p>
+<pre><span class="prompt">$</span> <span class="c"># trust the akhanda-os release key</span>
+<span class="prompt">$</span> <span class="k">sudo curl</span> -fsSL https://akhanda-os.github.io/akhanda-os/akhanda-archive-keyring.asc \
+    | <span class="k">sudo gpg</span> --dearmor -o /usr/share/keyrings/akhanda-archive-keyring.gpg
+
+<span class="prompt">$</span> <span class="c"># add the repo</span>
+<span class="prompt">$</span> <span class="k">echo</span> <span class="s">"deb [signed-by=/usr/share/keyrings/akhanda-archive-keyring.gpg] \
+    https://akhanda-os.github.io/akhanda-os akhanda-rolling main contrib non-free"</span> \
+    | <span class="k">sudo tee</span> /etc/apt/sources.list.d/akhanda.list
+
+<span class="prompt">$</span> <span class="c"># install any subset you need</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> update
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-iot          <span class="c"># Wi-Fi, BLE, MQTT, ...</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-automotive   <span class="c"># CAN, UDS, OBD-II, ICSim</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-ics          <span class="c"># Modbus, S7, BACnet, OPC-UA</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-medical      <span class="c"># DICOM, HL7, FHIR</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-embedded     <span class="c"># JTAG, SPI, MCU flashing</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-rf           <span class="c"># GNU Radio, HackRF, URH</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-firmware     <span class="c"># binwalk, unblob, ghidra, AFL++</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-forensics    <span class="c"># sleuthkit, volatility3, plaso</span>
+
+<span class="prompt">$</span> <span class="c"># or the kitchen-sink option</span>
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-everything</pre>
+    </section>
+
+    <section class="container">
+      <h2>// verify your download</h2>
+      <p class="section-sub">Every release is signed. Always verify before booting unknown ISOs.</p>
+<pre><span class="prompt">$</span> <span class="c"># fetch the release signing key and checksum bundle</span>
+<span class="prompt">$</span> <span class="k">curl</span> -LO https://github.com/akhanda-os/akhanda-os/releases/latest/download/SHA256SUMS
+<span class="prompt">$</span> <span class="k">curl</span> -LO https://github.com/akhanda-os/akhanda-os/releases/latest/download/SHA256SUMS.asc
+<span class="prompt">$</span> <span class="k">curl</span> -LO https://akhanda-os.github.io/akhanda-os/akhanda-archive-keyring.asc
+<span class="prompt">$</span> <span class="k">gpg</span> --import akhanda-archive-keyring.asc
+<span class="prompt">$</span> <span class="k">gpg</span> --verify SHA256SUMS.asc SHA256SUMS
+<span class="prompt">$</span> <span class="k">sha256sum</span> -c SHA256SUMS --ignore-missing
+akhanda-os-everything-amd64.iso: OK</pre>
+    </section>
+
+    <section class="container">
+      <h2>// minimum requirements</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>CPU</h3>
+          <p>x86_64 with virtualization extensions (VT-x / AMD-V) recommended for QEMU rehosting.</p>
+        </article>
+        <article class="card">
+          <h3>RAM</h3>
+          <p>4 GiB minimum. 8 GiB for Ghidra, angr, AFL++ workloads.</p>
+        </article>
+        <article class="card">
+          <h3>Disk</h3>
+          <p>16 GiB for live + persistence. 40 GiB for the VM appliance.</p>
+        </article>
+        <article class="card">
+          <h3>USB</h3>
+          <p>USB 3 ports for SDR (HackRF, Airspy), USB 2 fine for JTAG / UART / CAN dongles.</p>
+        </article>
+        <article class="card">
+          <h3>GPU</h3>
+          <p>Not required. Discrete GPU only helps if you run hashcat or train ML models on captures.</p>
+        </article>
+        <article class="card">
+          <h3>Network</h3>
+          <p>Lab-isolated mode is on by default. Outbound restricted to apt + DNS until you flip it.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>// legal</h2>
+      <p class="muted" style="max-width:780px;">
+        akhanda-os ships tools that can disrupt CAN buses, PLCs, medical devices, RF systems, and
+        more. Run them only on hardware you own, or under a written authorization signed by the
+        owner. ICS and medical devices in particular are often regulated; in many jurisdictions
+        unauthorized testing is a criminal offence. The project, the maintainers, and the contributors
+        accept no liability for misuse.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container row">
+      <div>akhanda-os v0.1.0-alpha &middot; amd64 &middot; GPL-3.0-or-later</div>
+      <div>
+        <a href="https://github.com/akhanda-os/akhanda-os">github</a> &middot;
+        <a href="https://github.com/akhanda-os/akhanda-os/issues">issues</a> &middot;
+        <a href="tools.html">tools</a> &middot;
+        <a href="/">home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

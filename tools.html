@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>tools | akhanda-os</title>
+  <meta name="description" content="Full inventory of tools shipped in akhanda-os. Filter by domain, search by name.">
+  <link rel="icon" type="image/png" href="assets/img/akhanda.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+
+  <header class="site">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="assets/img/akhanda.png" alt="">
+        <span>akhanda<span class="dot">-</span>os</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">~/</a>
+        <a href="tools.html">tools</a>
+        <a href="download.html">download</a>
+        <a href="https://github.com/akhanda-os/akhanda-os" target="_blank" rel="noopener">github</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" style="padding-top:48px">
+      <div class="prompt mono" style="color:var(--accent);font-size:0.9rem;">$ akhanda-tools --list</div>
+      <h1 style="font-size:clamp(1.8rem,2vw+1rem,2.6rem);margin-top:8px;">// tools</h1>
+      <p class="muted" style="max-width:720px;">
+        Every tool shipped in akhanda-os, grouped by domain. Click a chip to filter, or type to search.
+        Each name links to upstream. If a tool you expect is missing,
+        <a href="https://github.com/akhanda-os/akhanda-os/issues/new?template=tool-proposal.md">propose it</a>.
+      </p>
+
+      <div class="filterbar">
+        <input id="toolsearch" type="search" placeholder="search: caringcaribou, dicom, sdr, ...">
+        <div id="chips" class="chips"></div>
+        <span id="toolcount" class="mono"></span>
+      </div>
+
+      <div id="toolgrid" class="toolgrid"></div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container row">
+      <div>akhanda-os v0.1.0-alpha &middot; amd64 &middot; GPL-3.0-or-later</div>
+      <div>
+        <a href="https://github.com/akhanda-os/akhanda-os">github</a> &middot;
+        <a href="https://github.com/akhanda-os/akhanda-os/issues">issues</a> &middot;
+        <a href="/">home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>akhanda-os | Embedded Hacking OS</title>
+  <meta name="description" content="Debian-based live security distribution for IoT, automotive, ICS, medical, embedded, RF, and firmware. The connected-devices counterpart to Kali Linux.">
+  <meta property="og:title"       content="akhanda-os">
+  <meta property="og:description" content="The Kali for connected devices. IoT, automotive, ICS, medical, embedded, RF, firmware.">
+  <meta property="og:image"       content="https://akhanda-os.github.io/assets/img/akhanda.png">
+  <meta property="og:type"        content="website">
+  <meta name="theme-color" content="#06060f">
+  <link rel="icon" type="image/png" href="assets/img/akhanda.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+
+  <header class="site">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <img src="assets/img/akhanda.png" alt="">
+        <span>akhanda<span class="dot">-</span>os</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">~/</a>
+        <a href="tools.html">tools</a>
+        <a href="download.html">download</a>
+        <a href="https://github.com/akhanda-os/akhanda-os" target="_blank" rel="noopener">github</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="prompt">akhanda@os:~$ whoami</div>
+      <h1 class="glow glitch" data-text="Embedded Hacking OS">Embedded Hacking OS</h1>
+      <div class="tagline">Built for the wires, the radios, the silicon.<span class="cursor"></span></div>
+
+      <div class="domains">
+        <span class="pill">IoT</span>
+        <span class="pill">Automotive</span>
+        <span class="pill">ICS / SCADA</span>
+        <span class="pill">Medical</span>
+        <span class="pill">Embedded</span>
+        <span class="pill">RF / SDR</span>
+        <span class="pill">Firmware</span>
+        <span class="pill">Forensics</span>
+      </div>
+
+      <div>
+        <a class="cta primary" href="download.html">$ download iso</a>
+        <a class="cta" href="tools.html">$ list tools</a>
+        <a class="cta" href="https://github.com/akhanda-os/akhanda-os" target="_blank" rel="noopener">$ source</a>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>// why akhanda</h2>
+      <p class="section-sub">Kali is the standard for IT pentesting. Everything else, you bring yourself. akhanda-os is the everything else.</p>
+
+      <div class="grid grid-2">
+        <article class="card">
+          <span class="tag">niche</span>
+          <h3>Hardware and protocols, not webapps</h3>
+          <p>CAN bus, Modbus, S7, DICOM, BLE, Zigbee, JTAG, SPI flash, RF capture. Tools and udev rules preconfigured so probes work the second you plug them in.</p>
+        </article>
+        <article class="card">
+          <span class="tag">safe by default</span>
+          <h3>Lab-isolated networking</h3>
+          <p>Default firewall blocks egress to anything that isn't apt or DNS. ICS protocols allowed only on a designated lab interface. Switch to open mode requires an explicit flag, and is logged.</p>
+        </article>
+        <article class="card">
+          <span class="tag">debian-native</span>
+          <h3>No bespoke build system</h3>
+          <p>Pure Debian live-build plus a signed apt repo. Re-uses the Kali archive for tools that overlap. Layers our own metapackages and missing tools on top.</p>
+        </article>
+        <article class="card">
+          <span class="tag">layered</span>
+          <h3>Install only what you need</h3>
+          <p>Nine domain metapackages. Pick the ones that match your work: <code class="mono">apt install akhanda-iot akhanda-rf</code>. Or get everything with <code class="mono">akhanda-everything</code>.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>// domains</h2>
+      <p class="section-sub">Nine first-class areas. Each maps to a metapackage you can install standalone.</p>
+
+      <div class="grid grid-3" id="domain-grid">
+        <article class="card domain" style="--c:#00ff9d">
+          <span class="tag">akhanda-iot</span>
+          <h3>IoT</h3>
+          <p>Wi-Fi (WPA/WPA2/WPA3, WPS), BLE, Zigbee, Thread, MQTT, CoAP, mDNS, Matter. Consumer and prosumer connected devices.</p>
+        </article>
+        <article class="card domain" style="--c:#ff7a00">
+          <span class="tag">akhanda-automotive</span>
+          <h3>Automotive</h3>
+          <p>SocketCAN, ISO-TP, UDS, DoIP, OBD-II, caringcaribou, ICSim. vcan0 brought up automatically at boot.</p>
+        </article>
+        <article class="card domain" style="--c:#ffd000">
+          <span class="tag">akhanda-ics</span>
+          <h3>ICS / SCADA</h3>
+          <p>Modbus, Siemens S7, EtherNet/IP, DNP3, BACnet, OPC-UA. Includes conpot for safe lab targets.</p>
+        </article>
+        <article class="card domain" style="--c:#ff3b6b">
+          <span class="tag">akhanda-medical</span>
+          <h3>Medical</h3>
+          <p>DICOM (DCMTK, pynetdicom), HL7 v2, FHIR R4/R5, BLE medical profiles for glucometers, pulse ox, infusion pumps.</p>
+        </article>
+        <article class="card domain" style="--c:#7a5cff">
+          <span class="tag">akhanda-embedded</span>
+          <h3>Embedded</h3>
+          <p>JTAG, SWD, UART, SPI, I2C, MCU flashing (AVR, STM32, ESP), logic analysis, cross-compile toolchains.</p>
+        </article>
+        <article class="card domain" style="--c:#00d6ff">
+          <span class="tag">akhanda-rf</span>
+          <h3>RF / SDR</h3>
+          <p>GNU Radio, HackRF, RTL-SDR, Airspy, URH, rtl_433, multimon-ng. Reverse-engineer wireless protocols visually.</p>
+        </article>
+        <article class="card domain" style="--c:#ff00aa">
+          <span class="tag">akhanda-firmware</span>
+          <h3>Firmware</h3>
+          <p>binwalk + unblob extraction, radare2 / Ghidra static analysis, frida + QEMU rehosting, AFL++ / honggfuzz fuzzing.</p>
+        </article>
+        <article class="card domain" style="--c:#9bff00">
+          <span class="tag">akhanda-forensics</span>
+          <h3>Forensics</h3>
+          <p>Sleuth Kit, Volatility 3, Plaso, EnCase image support. Tailored for embedded artifacts (SquashFS, JFFS2, UBIFS).</p>
+        </article>
+        <article class="card domain" style="--c:#888888">
+          <span class="tag">akhanda-core</span>
+          <h3>Core</h3>
+          <p>Required base. Shells, editors, networking, build toolchain, Wireshark, nmap, scapy. Always installed.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2>// vs kali linux</h2>
+      <p class="section-sub">We do not compete on IT pentesting. We dominate the surfaces Kali leaves bare.</p>
+      <table>
+        <thead>
+          <tr><th></th><th>Kali Linux</th><th>akhanda-os</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Primary target</td>            <td class="no">IT / web / network</td>     <td class="yes">OT / IoT / embedded / cyber-physical</td></tr>
+          <tr><td>CAN bus, ECU diagnostics</td>  <td class="no">Manual install</td>          <td class="yes">First-class, vcan0 up at boot</td></tr>
+          <tr><td>ICS protocols (Modbus, S7, BACnet)</td><td class="no">A handful</td>      <td class="yes">Full stack + conpot honeypot</td></tr>
+          <tr><td>DICOM, HL7, FHIR</td>          <td class="no">None</td>                    <td class="yes">First-class</td></tr>
+          <tr><td>Firmware analysis</td>         <td class="no">binwalk only</td>            <td class="yes">binwalk + unblob + firmwalker + emba</td></tr>
+          <tr><td>RF / SDR</td>                  <td class="no">Few packages</td>            <td class="yes">Full GNU Radio + URH + SDR++ stack</td></tr>
+          <tr><td>Hardware probes (J-Link, Glasgow, Flipper, ...)</td><td class="no">Manual udev rules</td><td class="yes">Preconfigured</td></tr>
+          <tr><td>Default network posture</td>   <td class="no">Open</td>                    <td class="yes">Lab-isolated, opt-in to open</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="container">
+      <h2>// install</h2>
+      <p class="section-sub">Add the apt repo on Debian / Kali, or download the full ISO.</p>
+<pre><span class="prompt">$</span> <span class="k">sudo curl</span> -fsSL https://akhanda-os.github.io/akhanda-os/akhanda-archive-keyring.asc \
+    | <span class="k">sudo gpg</span> --dearmor -o /usr/share/keyrings/akhanda-archive-keyring.gpg
+
+<span class="prompt">$</span> <span class="k">echo</span> <span class="s">"deb [signed-by=/usr/share/keyrings/akhanda-archive-keyring.gpg] \
+    https://akhanda-os.github.io/akhanda-os akhanda-rolling main contrib non-free"</span> \
+    | <span class="k">sudo tee</span> /etc/apt/sources.list.d/akhanda.list
+
+<span class="prompt">$</span> <span class="k">sudo apt</span> update
+<span class="prompt">$</span> <span class="k">sudo apt</span> install akhanda-iot akhanda-rf      <span class="c"># or akhanda-everything</span></pre>
+
+      <p class="center" style="margin-top:24px">
+        <a class="cta primary" href="download.html">$ download.iso</a>
+        <a class="cta" href="tools.html">$ browse 100+ tools</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="container row">
+      <div>
+        akhanda-os v0.1.0-alpha &middot; amd64 &middot; GPL-3.0-or-later
+      </div>
+      <div>
+        <a href="https://github.com/akhanda-os/akhanda-os">github</a> &middot;
+        <a href="https://github.com/akhanda-os/akhanda-os/issues">issues</a> &middot;
+        <a href="tools.html">tools</a> &middot;
+        <a href="download.html">download</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

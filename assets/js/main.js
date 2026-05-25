@@ -1,47 +1,7 @@
 /* akhanda-os website
- * Two responsibilities:
- *   1. Subtle matrix-rain canvas background.
- *   2. Render and filter the tools list from data/tools.json.
+ * Renders and filters the tools list from data/tools.json.
+ * Background visuals are pure CSS (bindu watermark in body::before).
  */
-
-// -------- Matrix rain --------
-(function matrixRain () {
-  const canvas = document.getElementById('matrix');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const glyphs = '01アァカサタナハマヤラワ0xDEADBEEF{}[]<>/\\|=+-*?$#@';
-  let columns, drops, fontSize;
-
-  function resize () {
-    canvas.width  = window.innerWidth  * window.devicePixelRatio;
-    canvas.height = window.innerHeight * window.devicePixelRatio;
-    canvas.style.width  = window.innerWidth  + 'px';
-    canvas.style.height = window.innerHeight + 'px';
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    fontSize = 14;
-    columns  = Math.floor(window.innerWidth / fontSize);
-    drops    = new Array(columns).fill(0).map(() => Math.random() * -100);
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  function tick () {
-    ctx.fillStyle = 'rgba(6, 6, 15, 0.07)';
-    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
-    ctx.font = fontSize + 'px JetBrains Mono, monospace';
-    for (let i = 0; i < columns; i++) {
-      const ch = glyphs[Math.floor(Math.random() * glyphs.length)];
-      const x = i * fontSize;
-      const y = drops[i] * fontSize;
-      ctx.fillStyle = Math.random() > 0.98 ? '#ff7a00' : '#00ff9d';
-      ctx.fillText(ch, x, y);
-      drops[i] = (y > window.innerHeight && Math.random() > 0.975)
-        ? 0 : drops[i] + 1;
-    }
-  }
-  setInterval(tick, 70);
-})();
 
 // -------- Tools list (only on /tools.html) --------
 (async function toolsList () {

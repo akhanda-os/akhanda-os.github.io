@@ -13,11 +13,11 @@
   <link rel="icon" type="image/png" href="assets/img/akhanda.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;900&family=Inter:wght@400;500;600&family=Noto+Sans+Devanagari:wght@500;600&family=Noto+Sans+Bengali:wght@500&family=Noto+Sans+Gujarati:wght@500&family=Noto+Sans+Gurmukhi:wght@500&family=Noto+Sans+Tamil:wght@500&family=Noto+Sans+Telugu:wght@500&family=Noto+Sans+Kannada:wght@500&family=Noto+Sans+Malayalam:wght@500&family=Noto+Sans+Oriya:wght@500&family=Noto+Naskh+Arabic:wght@500&family=Noto+Nastaliq+Urdu:wght@500&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <canvas id="matrix" aria-hidden="true"></canvas>
+
 
   <header class="site">
     <div class="container nav">
@@ -38,9 +38,14 @@
     <section class="hero container">
       <div class="boot-line">[ <span class="ok">+</span> ] akhanda-os v0.1.0-alpha &middot; amd64 &middot; ready</div>
 
-      <h1 class="wordmark" aria-label="akhanda">
-        <span>a</span><span>k</span><span>h</span><span>a</span><span>n</span><span>d</span><span>a</span>
+      <div class="sanskrit" lang="sa" aria-hidden="true">अखण्ड</div>
+
+      <h1 class="wordmark" aria-label="Akhanda">
+        <span>A</span><span>k</span><span>h</span><span>a</span><span>n</span><span>d</span><span>a</span>
+        <span class="underbar" aria-hidden="true"></span>
       </h1>
+
+      <p class="meaning">the whole connected world</p>
 
       <div class="rule"></div>
 
@@ -201,8 +206,34 @@
 
       <p class="center" style="margin-top:24px">
         <a class="cta primary" href="download.html">$ download.iso</a>
-        <a class="cta" href="tools.html">$ browse 100+ tools</a>
+        <a class="cta" href="tools.html">$ browse 291+ tools</a>
       </p>
+    </section>
+
+    <section class="container">
+      <h2>// the name</h2>
+      <p class="section-sub">
+        <em>Akhanda</em> &middot; from Sanskrit &middot; meaning <strong>indivisible, whole, unbroken</strong>.
+      </p>
+      <div class="multilingual">
+        <div class="lang"><span class="word"  lang="en">Akhanda</span>     <span class="tag">English</span></div>
+        <div class="lang"><span class="word d" lang="sa">अखण्ड</span>      <span class="tag">Sanskrit</span></div>
+        <div class="lang"><span class="word d" lang="hi">अखंड</span>       <span class="tag">Hindi</span></div>
+        <div class="lang"><span class="word d" lang="mr">अखंड</span>       <span class="tag">Marathi</span></div>
+        <div class="lang"><span class="word d" lang="ne">अखण्ड</span>      <span class="tag">Nepali</span></div>
+        <div class="lang"><span class="word d" lang="kok">अखंड</span>      <span class="tag">Konkani</span></div>
+        <div class="lang"><span class="word b" lang="bn">অখণ্ড</span>      <span class="tag">Bengali</span></div>
+        <div class="lang"><span class="word b" lang="as">অখণ্ড</span>      <span class="tag">Assamese</span></div>
+        <div class="lang"><span class="word g" lang="gu">અખંડ</span>       <span class="tag">Gujarati</span></div>
+        <div class="lang"><span class="word p" lang="pa">ਅਖੰਡ</span>       <span class="tag">Punjabi</span></div>
+        <div class="lang"><span class="word t" lang="ta">அகண்ட</span>     <span class="tag">Tamil</span></div>
+        <div class="lang"><span class="word te" lang="te">అఖండ</span>     <span class="tag">Telugu</span></div>
+        <div class="lang"><span class="word k" lang="kn">ಅಖಂಡ</span>      <span class="tag">Kannada</span></div>
+        <div class="lang"><span class="word m" lang="ml">അഖണ്ഡ</span>    <span class="tag">Malayalam</span></div>
+        <div class="lang"><span class="word o" lang="or">ଅଖଣ୍ଡ</span>     <span class="tag">Odia</span></div>
+        <div class="lang"><span class="word u" lang="ur" dir="rtl">اَکَنڈ</span>  <span class="tag">Urdu</span></div>
+        <div class="lang"><span class="word u" lang="ks" dir="rtl">اَکَنڈ</span>  <span class="tag">Kashmiri</span></div>
+      </div>
     </section>
   </main>
 

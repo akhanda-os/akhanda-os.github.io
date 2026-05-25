@@ -44,15 +44,24 @@ body {
   min-height: 100vh;
 }
 
-/* Matrix canvas behind everything */
-#matrix {
+/* Bindu watermark: the akhanda logo as a persistent background mark,
+   visible on every page, slowly breathing. The matrix-rain background
+   was removed - this is the only background effect now. */
+body::before {
+  content: "";
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.10;
+  background:
+    url("../img/akhanda.png") center center / min(92vmin, 1100px) no-repeat;
+  opacity: 0.18;
+  mix-blend-mode: screen;
   pointer-events: none;
+  z-index: 0;
+  animation: bindu-breath 14s ease-in-out infinite;
+}
+@keyframes bindu-breath {
+  0%, 100% { opacity: 0.16; transform: scale(1.00); }
+  50%      { opacity: 0.22; transform: scale(1.02); }
 }
 
 main, header, footer { position: relative; z-index: 1; }
@@ -143,20 +152,37 @@ header.site {
 }
 .hero .boot-line .ok { color: var(--accent); font-weight: 700; }
 
-/* THE wordmark - hero brand. Big, custom, distinctive. */
+/* Devanagari overhead: अखण्ड (Akhanda) - the Sanskrit name.
+   Sits ABOVE the wordmark, very subtle, communicates origin. */
+.sanskrit {
+  font-family: "Noto Sans Devanagari", "Mukta", "Hind", serif;
+  font-size: clamp(1.2rem, 2vw + 0.4rem, 1.9rem);
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  opacity: 0.55;
+  margin: 0 0 6px;
+  text-shadow: 0 0 14px rgba(0, 255, 157, 0.35);
+}
+
+/* THE wordmark - hero brand. Big, weighty, indivisible.
+   Letters sit on a single continuous glowing underbar
+   to visually communicate the meaning of Akhanda (unbroken). */
 .wordmark {
   font-family: var(--font-mono);
-  font-weight: 800;
+  font-weight: 900;
   font-size: clamp(4.5rem, 18vw, 14rem);
   line-height: 0.95;
-  letter-spacing: -0.04em;
-  margin: 0 0 18px;
-  display: flex;
+  letter-spacing: -0.06em;          /* tighter: letters almost touch */
+  margin: 0 0 12px;
+  display: inline-flex;
   justify-content: center;
-  gap: 0.02em;
+  position: relative;
+  gap: 0;
   user-select: none;
+  padding-bottom: 0.06em;
 }
-.wordmark span {
+.wordmark span:not(.underbar) {
   display: inline-block;
   background: linear-gradient(180deg,
     #ffffff 0%,
@@ -165,20 +191,130 @@ header.site {
     #00b87a 100%);
   -webkit-background-clip: text; background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 22px rgba(0, 255, 157, 0.18));
-  transform-origin: 50% 70%;
-  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 22px rgba(0, 255, 157, 0.20));
 }
-/* Stagger the gentle float so the letters do not move together */
-.wordmark span:nth-child(2) { animation-delay: 0.4s; }
-.wordmark span:nth-child(3) { animation-delay: 0.8s; }
-.wordmark span:nth-child(4) { animation-delay: 1.2s; }
-.wordmark span:nth-child(5) { animation-delay: 1.6s; }
-.wordmark span:nth-child(6) { animation-delay: 2.0s; }
-.wordmark span:nth-child(7) { animation-delay: 2.4s; }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-3px); }
+/* The unbroken underbar - visual metaphor for "indivisible".
+   One single line across all letters, no breaks. */
+.wordmark .underbar {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--accent) 18%,
+    #ffffff 50%,
+    var(--accent) 82%,
+    transparent 100%);
+  box-shadow: 0 0 16px rgba(0, 255, 157, 0.55);
+  border-radius: 2px;
+  transform-origin: 50% 50%;
+  animation: pulseBar 4s ease-in-out infinite;
+}
+@keyframes pulseBar {
+  0%, 100% { opacity: 0.7; transform: scaleX(1); }
+  50%      { opacity: 1.0; transform: scaleX(1.02); }
+}
+
+/* Meaning line directly under the wordmark */
+.meaning {
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 0.5vw + 0.65rem, 0.95rem);
+  color: var(--fg-mute);
+  letter-spacing: 0.18em;
+  text-transform: lowercase;
+  margin: 16px 0 0;
+}
+.meaning em {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(0, 255, 157, 0.35);
+}
+
+/* ============ MULTILINGUAL STRIP (the // the name section) ============
+   Inspired by the language panel on the reverse of an Indian Rupee note. */
+.multilingual {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+  padding: 24px 20px;
+  background:
+    linear-gradient(180deg, var(--panel) 0%, var(--bg-soft) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+}
+/* Faint accent corner-glows to feel like a printed note */
+.multilingual::before,
+.multilingual::after {
+  content: "";
+  position: absolute;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  opacity: 0.18;
+}
+.multilingual::before {
+  top: -80px; left: -80px;
+  background: var(--accent);
+}
+.multilingual::after {
+  bottom: -90px; right: -80px;
+  background: var(--accent-2);
+}
+
+.multilingual .lang {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: border-color 150ms ease, transform 150ms ease, background 150ms ease;
+  position: relative;
+  z-index: 1;
+}
+.multilingual .lang:hover {
+  border-color: rgba(0, 255, 157, 0.35);
+  background: rgba(0, 255, 157, 0.04);
+  transform: translateY(-2px);
+}
+.multilingual .word {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  color: var(--fg);
+  background: linear-gradient(180deg, #ffffff 0%, var(--accent) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 157, 0.18));
+}
+/* Per-script font assignments. Each script needs its own font fallback so
+   characters render correctly even if a system font is missing. */
+.multilingual .word.d  { font-family: "Noto Sans Devanagari", serif; }
+.multilingual .word.b  { font-family: "Noto Sans Bengali",   serif; }
+.multilingual .word.g  { font-family: "Noto Sans Gujarati",  serif; }
+.multilingual .word.p  { font-family: "Noto Sans Gurmukhi",  serif; }
+.multilingual .word.t  { font-family: "Noto Sans Tamil",     serif; }
+.multilingual .word.te { font-family: "Noto Sans Telugu",    serif; }
+.multilingual .word.k  { font-family: "Noto Sans Kannada",   serif; }
+.multilingual .word.m  { font-family: "Noto Sans Malayalam", serif; }
+.multilingual .word.o  { font-family: "Noto Sans Oriya",     serif; }
+.multilingual .word.u  { font-family: "Noto Nastaliq Urdu", "Noto Naskh Arabic", serif; font-size: 1.5rem; }
+
+.multilingual .tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-mute);
 }
 
 /* Hairline neon divider under the wordmark */
@@ -310,6 +446,70 @@ th { color: var(--accent); font-weight: 500; }
 tr:hover td { background: var(--panel); }
 td.no  { color: var(--fg-mute); }
 td.yes { color: var(--accent); }
+
+/* ============ TOOLS PAGE HERO ============ */
+.tools-hero {
+  padding: 72px 0 36px;
+  text-align: center;
+  position: relative;
+}
+.tools-hero .boot-line {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--fg-mute);
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+}
+.tools-hero .boot-line .ok { color: var(--accent); font-weight: 700; }
+.tools-hero .sanskrit {
+  font-family: "Noto Sans Devanagari", serif;
+  font-size: clamp(1rem, 1.5vw + 0.3rem, 1.5rem);
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  opacity: 0.55;
+  margin: 0 0 6px;
+  text-shadow: 0 0 14px rgba(0, 255, 157, 0.35);
+}
+.tools-hero .tools-title {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 3.5vw + 1rem, 3.4rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
+  background: linear-gradient(180deg, #ffffff 0%, var(--accent) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px rgba(0, 255, 157, 0.15));
+}
+.tools-hero .tools-sub {
+  font-family: var(--font-mono);
+  color: var(--fg-dim);
+  font-size: 0.95rem;
+  max-width: 760px;
+  margin: 0 auto 26px;
+  line-height: 1.6;
+}
+.tools-hero .tools-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.tools-hero .tools-stats .kbd {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  letter-spacing: 0.03em;
+}
+.tools-hero .tools-stats .kbd sup {
+  font-size: 0.65em;
+  color: var(--accent);
+}
 
 /* Tools page filter bar */
 .filterbar {

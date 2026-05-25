@@ -1946,6 +1946,282 @@
       "domain": "voip",
       "desc": "HEP-based SIP analytics + capture agent, used both defensively and offensively.",
       "url": "https://github.com/sipcapture/homer"
+    },
+    {
+      "name": "bladeRF",
+      "domain": "rf",
+      "desc": "Nuand bladeRF SDR userspace + libraries (CW, GSM, LTE, GPS).",
+      "url": "https://github.com/Nuand/bladeRF"
+    },
+    {
+      "name": "UHD (USRP)",
+      "domain": "rf",
+      "desc": "Ettus Research USRP Hardware Driver - the reference SDR stack.",
+      "url": "https://github.com/EttusResearch/uhd"
+    },
+    {
+      "name": "LimeSuite",
+      "domain": "rf",
+      "desc": "LimeSDR / LimeSDR-Mini host tools, calibration, GUI.",
+      "url": "https://github.com/myriadrf/LimeSuite"
+    },
+    {
+      "name": "gr-gsm",
+      "domain": "rf",
+      "desc": "GNU Radio blocks for sniffing and analysing GSM downlink.",
+      "url": "https://github.com/ptrkrysik/gr-gsm"
+    },
+    {
+      "name": "gr-iridium",
+      "domain": "rf",
+      "desc": "Iridium satellite phone downlink decoder for GNU Radio.",
+      "url": "https://github.com/muccc/gr-iridium"
+    },
+    {
+      "name": "gr-dect2",
+      "domain": "rf",
+      "desc": "DECT cordless-phone air-interface decoder.",
+      "url": "https://github.com/Nuand/gr-dect2"
+    },
+    {
+      "name": "gr-air-modes",
+      "domain": "rf",
+      "desc": "ADS-B / Mode-S decoder running on top of GNU Radio.",
+      "url": "https://github.com/bistromath/gr-air-modes"
+    },
+    {
+      "name": "gnss-sdr",
+      "domain": "rf",
+      "desc": "Open-source GNSS receiver: GPS, Galileo, GLONASS, Beidou over SDR.",
+      "url": "https://github.com/gnss-sdr/gnss-sdr"
+    },
+    {
+      "name": "gps-sdr-sim",
+      "domain": "rf",
+      "desc": "Generate GPS L1 baseband samples for SDR-based GPS signal simulation.",
+      "url": "https://github.com/osqzss/gps-sdr-sim"
+    },
+    {
+      "name": "mousejack",
+      "domain": "rf",
+      "desc": "Bastille Networks 2.4 GHz keyboard / mouse hijack research framework.",
+      "url": "https://github.com/BastilleResearch/mousejack"
+    },
+    {
+      "name": "jackit",
+      "domain": "rf",
+      "desc": "Scriptable mousejack attack tool with payload library.",
+      "url": "https://github.com/insecurityofthings/jackit"
+    },
+    {
+      "name": "trunk-recorder",
+      "domain": "rf",
+      "desc": "Decode and record P25, DMR, and other trunked public-safety radio.",
+      "url": "https://github.com/robotastic/trunk-recorder"
+    },
+    {
+      "name": "dsd",
+      "domain": "rf",
+      "desc": "Digital Speech Decoder for P25 Phase 1, DMR, NXDN, dPMR.",
+      "url": "https://github.com/szechyjs/dsd"
+    },
+    {
+      "name": "TempestSDR",
+      "domain": "rf",
+      "desc": "Recover screen content from electromagnetic emanations (TEMPEST attack).",
+      "url": "https://github.com/martinmarinov/TempestSDR"
+    },
+    {
+      "name": "fldigi",
+      "domain": "rf",
+      "desc": "Multi-mode digital modem and amateur-radio HF / VHF traffic decoder.",
+      "url": "http://www.w1hkj.com"
+    },
+    {
+      "name": "direwolf",
+      "domain": "rf",
+      "desc": "Software TNC for APRS, AIS, IL2P, KISS over sound card or SDR.",
+      "url": "https://github.com/wb2osz/direwolf"
+    },
+    {
+      "name": "osmocom-bb",
+      "domain": "voip",
+      "desc": "Open-source GSM baseband stack for the Motorola C123 / C155 phone.",
+      "url": "https://osmocom.org/projects/baseband"
+    },
+    {
+      "name": "osmo-trx",
+      "domain": "voip",
+      "desc": "Software-defined radio transceiver for the OsmoBTS GSM base station.",
+      "url": "https://osmocom.org/projects/osmotrx"
+    },
+    {
+      "name": "yatebts",
+      "domain": "voip",
+      "desc": "Yate-based open-source GSM / SatBTS base station (alternative to OpenBTS).",
+      "url": "https://yate.ro/yate-bts"
+    },
+    {
+      "name": "Open5GS",
+      "domain": "voip",
+      "desc": "Open-source 5G core network for SDR-based 5G testing labs.",
+      "url": "https://open5gs.org"
+    },
+    {
+      "name": "SCTPscan",
+      "domain": "voip",
+      "desc": "Stealth SCTP port and association scanner - the entry point to SS7 networks.",
+      "url": "https://github.com/EnableSecurity/sctpscan"
+    },
+    {
+      "name": "SigPloit",
+      "domain": "voip",
+      "desc": "Signalling-protocol exploitation framework (SS7, GTP, Diameter, SIP).",
+      "url": "https://github.com/SigPloiter/SigPloit"
+    },
+    {
+      "name": "ss7MAPer",
+      "domain": "voip",
+      "desc": "SS7 MAP (Mobile Application Part) abuse tooling for testing telecom signalling.",
+      "url": "https://github.com/0xc0decafe/ss7MAPer"
+    },
+    {
+      "name": "gsmevil2",
+      "domain": "voip",
+      "desc": "IMSI catcher and rogue-BTS detection / capture using gr-gsm.",
+      "url": "https://github.com/ninjhacks/gsmevil2"
+    },
+    {
+      "name": "Mirth Connect",
+      "domain": "medical",
+      "desc": "NextGen open-source HL7 v2 / FHIR / DICOM integration engine and router.",
+      "url": "https://github.com/nextgenhealthcare/connect"
+    },
+    {
+      "name": "Aeskulap",
+      "domain": "medical",
+      "desc": "GTK-based open-source DICOM viewer for radiology research / labs.",
+      "url": "http://aeskulap.nongnu.org"
+    },
+    {
+      "name": "OHIF Viewer",
+      "domain": "medical",
+      "desc": "Open-source web-based DICOM viewer used in many medical research labs.",
+      "url": "https://github.com/OHIF/Viewers"
+    },
+    {
+      "name": "Synthea",
+      "domain": "medical",
+      "desc": "Synthetic Patient Population Simulator - safe FHIR/HL7 data for testing.",
+      "url": "https://github.com/synthetichealth/synthea"
+    },
+    {
+      "name": "HAPI FHIR",
+      "domain": "medical",
+      "desc": "Java FHIR client + server for spinning up disposable medical-data lab targets.",
+      "url": "https://hapifhir.io"
+    },
+    {
+      "name": "DICOM Anonymizer",
+      "domain": "medical",
+      "desc": "Strip PHI from DICOM datasets before publishing or sharing for tests.",
+      "url": "https://github.com/KitwareMedical/dicom-anonymizer"
+    },
+    {
+      "name": "iec104-explorer",
+      "domain": "ics",
+      "desc": "IEC 60870-5-104 (electric grid) client / scanner for SCADA research.",
+      "url": "https://github.com/CMU-CERT-Coordination/iec104"
+    },
+    {
+      "name": "profinet-tools",
+      "domain": "ics",
+      "desc": "Profinet IO (Siemens factory automation) scanner and dissector helpers.",
+      "url": "https://github.com/dortania/profinet-tools"
+    },
+    {
+      "name": "ethercat-tools",
+      "domain": "ics",
+      "desc": "EtherCAT master and slave probing utilities for motion-control research.",
+      "url": "https://github.com/OpenEtherCATsociety/SOEM"
+    },
+    {
+      "name": "modpoll",
+      "domain": "ics",
+      "desc": "Command-line Modbus master for reading and writing PLC registers.",
+      "url": "https://www.modbusdriver.com/modpoll.html"
+    },
+    {
+      "name": "ScadaBR",
+      "domain": "ics",
+      "desc": "Open-source SCADA HMI useful as a lab target for HMI-level attack research.",
+      "url": "https://github.com/SCADA-LTS/Scada-LTS"
+    },
+    {
+      "name": "PLCinject",
+      "domain": "ics",
+      "desc": "Inject and execute payloads in Siemens S7 PLCs - canonical PLC implant PoC.",
+      "url": "https://github.com/SCADACS/PLCinject"
+    },
+    {
+      "name": "ICSScanner",
+      "domain": "ics",
+      "desc": "Targeted scanner for fingerprinting industrial protocols across a subnet.",
+      "url": "https://github.com/dark-lbp/ICSScanner"
+    },
+    {
+      "name": "nmap-ics-scripts",
+      "domain": "ics",
+      "desc": "Curated nmap NSE scripts for Modbus, S7, EtherNet/IP, BACnet, DNP3, OPC-UA.",
+      "url": "https://github.com/jpalanco/nmap-scada"
+    },
+    {
+      "name": "ELM327-emulator",
+      "domain": "automotive",
+      "desc": "Pure-Python OBD-II / ELM327 emulator for testing diagnostic clients offline.",
+      "url": "https://github.com/Ircama/ELM327-emulator"
+    },
+    {
+      "name": "obd-utils",
+      "domain": "automotive",
+      "desc": "Command-line OBD-II reader, fault-code clearing, live-data logging.",
+      "url": "https://github.com/Pbartek/pyobd-pi"
+    },
+    {
+      "name": "canopen-tools",
+      "domain": "automotive",
+      "desc": "CANopen master / slave tooling (industrial vehicle + robotics use cases).",
+      "url": "https://github.com/CANopenNode/CANopenLinux"
+    },
+    {
+      "name": "j1939-tools",
+      "domain": "automotive",
+      "desc": "SAE J1939 client (heavy-duty trucks, busses, agricultural and military vehicles).",
+      "url": "https://github.com/juergenh/j1939-91"
+    },
+    {
+      "name": "pcan-tools",
+      "domain": "automotive",
+      "desc": "PEAK Systems PCAN drivers, candriver, and analysis utilities for Linux.",
+      "url": "https://www.peak-system.com/fileadmin/media/linux/index.htm"
+    },
+    {
+      "name": "CAN-FD-utils",
+      "domain": "automotive",
+      "desc": "CAN-FD aware variants of candump / cansend for modern ECU diagnostics.",
+      "url": "https://github.com/linux-can/can-utils"
+    },
+    {
+      "name": "car-hack-village",
+      "domain": "automotive",
+      "desc": "Curated reference / wiki + dump files from the DEF CON Car Hacking Village.",
+      "url": "https://github.com/CarHackingVillage/CarHackingVillage"
+    },
+    {
+      "name": "openxc-python",
+      "domain": "automotive",
+      "desc": "Ford OpenXC vehicle interface tooling for telemetry + control reverse-engineering.",
+      "url": "https://github.com/openxc/openxc-python"
     }
   ]
 }

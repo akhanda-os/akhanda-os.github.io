@@ -84,6 +84,12 @@
       "name": "Android",
       "color": "#3ddc84",
       "blurb": "Android APK / firmware / device assessment."
+    },
+    {
+      "id": "supplychain",
+      "name": "Supply Chain / SBOM",
+      "color": "#ffd866",
+      "blurb": "SBOM generation, vulnerability matching, supply-chain provenance (CycloneDX, SPDX, OSV)."
     }
   ],
   "tools": [
@@ -1454,6 +1460,384 @@
       "domain": "android",
       "desc": "Nuclei templates targeting mobile app endpoints.",
       "url": "https://github.com/projectdiscovery/nuclei-templates"
+    },
+    {
+      "name": "HCIHawk",
+      "domain": "bluetooth",
+      "desc": "Passive BT capture analysis with CVE mapping and evidence-chain pentest reports.",
+      "url": "https://github.com/V33RU/HCIHawk"
+    },
+    {
+      "name": "BtleJuice",
+      "domain": "bluetooth",
+      "desc": "BLE Man-in-the-Middle framework with transparent GATT proxying.",
+      "url": "https://github.com/DigitalSecurity/btlejuice"
+    },
+    {
+      "name": "InternalBlue",
+      "domain": "bluetooth",
+      "desc": "Broadcom / Cypress Bluetooth firmware patching and research framework.",
+      "url": "https://github.com/seemoo-lab/internalblue"
+    },
+    {
+      "name": "Sniffle",
+      "domain": "bluetooth",
+      "desc": "BLE 5 sniffer for TI CC26xx / CC1352 supporting Coded PHY and extended advertising.",
+      "url": "https://github.com/nccgroup/Sniffle"
+    },
+    {
+      "name": "SweynTooth PoC",
+      "domain": "bluetooth",
+      "desc": "Canonical proof-of-concept scripts for the 12 BLE link-layer CVE family.",
+      "url": "https://asset-group.github.io/disclosures/sweyntooth/"
+    },
+    {
+      "name": "hostapd-wpe",
+      "domain": "wifi",
+      "desc": "WPA / WPA2 Enterprise rogue-AP that captures MSCHAPv2 credentials.",
+      "url": "https://github.com/OpenSecurityResearch/hostapd-wpe"
+    },
+    {
+      "name": "hcxlabtool",
+      "domain": "wifi",
+      "desc": "Active-mode PMKID / EAPOL capture, successor to hcxdumptool.",
+      "url": "https://github.com/ZerBea/hcxlabtool"
+    },
+    {
+      "name": "airgeddon",
+      "domain": "wifi",
+      "desc": "Multi-mode auditing menu wrapper covering aircrack / hashcat / dnsspoof / evil-twin.",
+      "url": "https://github.com/v1s1t0r1sh3r3/airgeddon"
+    },
+    {
+      "name": "fluxion",
+      "domain": "wifi",
+      "desc": "Evil-twin attack chain with captive portal credential phishing.",
+      "url": "https://github.com/FluxionNetwork/fluxion"
+    },
+    {
+      "name": "linset",
+      "domain": "wifi",
+      "desc": "Original evil-twin + DNS spoof toolkit, predecessor of fluxion.",
+      "url": "https://github.com/vk496/linset"
+    },
+    {
+      "name": "cowpatty",
+      "domain": "wifi",
+      "desc": "Offline WPA-PSK dictionary attack with rainbow table support.",
+      "url": "https://github.com/joswr1ght/cowpatty"
+    },
+    {
+      "name": "zwave-js-ui",
+      "domain": "iot",
+      "desc": "Z-Wave network UI + audit tool used by Home Assistant for smart-lock and sensor research.",
+      "url": "https://github.com/zwave-js/zwave-js-ui"
+    },
+    {
+      "name": "zigpy",
+      "domain": "iot",
+      "desc": "Python Zigbee stack for automation and protocol-level security research.",
+      "url": "https://github.com/zigpy/zigpy"
+    },
+    {
+      "name": "chip-tool",
+      "domain": "iot",
+      "desc": "Matter / CHIP commissioning, attestation, and security testing CLI.",
+      "url": "https://github.com/project-chip/connectedhomeip"
+    },
+    {
+      "name": "OpenThread (ot-cli)",
+      "domain": "iot",
+      "desc": "Thread border-router and node CLI for mesh-layer testing and rehosting.",
+      "url": "https://github.com/openthread/openthread"
+    },
+    {
+      "name": "Scapy Zigbee layer",
+      "domain": "iot",
+      "desc": "Scapy IEEE 802.15.4 / Zigbee dissectors for crafted packet attacks.",
+      "url": "https://scapy.readthedocs.io/en/latest/layers/zigbee.html"
+    },
+    {
+      "name": "redpoint (ICS msf)",
+      "domain": "ics",
+      "desc": "Metasploit modules targeting EtherNet/IP, CIP, DNP3, S7, Modbus, BACnet.",
+      "url": "https://github.com/digitalbond/Redpoint"
+    },
+    {
+      "name": "GrassMarlin",
+      "domain": "ics",
+      "desc": "CISA's passive ICS network-mapping tool, builds asset inventory without touching PLCs.",
+      "url": "https://github.com/nsacyber/GRASSMARLIN"
+    },
+    {
+      "name": "ISF",
+      "domain": "ics",
+      "desc": "Industrial Security Framework: Metasploit-style modules for OT protocols.",
+      "url": "https://github.com/dark-lbp/isf"
+    },
+    {
+      "name": "opc-ua-tools",
+      "domain": "ics",
+      "desc": "OPC-UA scanner, enumerator and weak-config checker (covers anonymous, weak crypto modes).",
+      "url": "https://github.com/itm4n/opcua-exploit-tools"
+    },
+    {
+      "name": "OpenDNP3",
+      "domain": "ics",
+      "desc": "DNP3 master + outstation library for SCADA grid-protocol research.",
+      "url": "https://github.com/dnp3/opendnp3"
+    },
+    {
+      "name": "cpppo",
+      "domain": "ics",
+      "desc": "EtherNet/IP and CIP client/server for Allen-Bradley / Rockwell PLC enumeration.",
+      "url": "https://github.com/pjkundert/cpppo"
+    },
+    {
+      "name": "modscan",
+      "domain": "ics",
+      "desc": "Dedicated Modbus device scanner that complements plcscan.",
+      "url": "https://github.com/gdyoung/Modbus"
+    },
+    {
+      "name": "firmware-mod-kit",
+      "domain": "firmware",
+      "desc": "Quick extract / modify / repack pipeline for legacy SquashFS / CramFS firmware.",
+      "url": "https://github.com/rampageX/firmware-mod-kit"
+    },
+    {
+      "name": "cwe_checker",
+      "domain": "firmware",
+      "desc": "Bjorn Steel's binary-hardening and CWE detection over Ghidra IR.",
+      "url": "https://github.com/fkie-cad/cwe_checker"
+    },
+    {
+      "name": "checksec",
+      "domain": "firmware",
+      "desc": "Fast ELF binary security-property checker (NX, RELRO, ASLR, canary, PIE).",
+      "url": "https://github.com/slimm609/checksec.sh"
+    },
+    {
+      "name": "EMUX",
+      "domain": "firmware",
+      "desc": "QEMU-based firmware emulation framework, ARM and MIPS with Broadcom support.",
+      "url": "https://github.com/therealsaumil/emux"
+    },
+    {
+      "name": "OFRAK",
+      "domain": "firmware",
+      "desc": "Red Balloon's modular binary unpacking, analysis, and patching framework.",
+      "url": "https://github.com/redballoonsecurity/ofrak"
+    },
+    {
+      "name": "FLOSS",
+      "domain": "firmware",
+      "desc": "FLARE obfuscated-string solver, extracts strings from packed/encoded binaries.",
+      "url": "https://github.com/mandiant/flare-floss"
+    },
+    {
+      "name": "capa",
+      "domain": "firmware",
+      "desc": "FLARE behaviour-detection engine, identifies malware-style capabilities in binaries.",
+      "url": "https://github.com/mandiant/capa"
+    },
+    {
+      "name": "OpenBTS",
+      "domain": "rf",
+      "desc": "Software GSM base station for cellular IoT (2G / EDGE) protocol research.",
+      "url": "https://github.com/RangeNetworks/openbts"
+    },
+    {
+      "name": "srsRAN",
+      "domain": "rf",
+      "desc": "Open-source 4G/5G stack for SDR-based LTE-M / NB-IoT testing.",
+      "url": "https://github.com/srsran/srsran_project"
+    },
+    {
+      "name": "rpitx",
+      "domain": "rf",
+      "desc": "Raspberry Pi GPIO RF transmitter for sub-GHz replay (garage, car, ISM remotes).",
+      "url": "https://github.com/F5OEO/rpitx"
+    },
+    {
+      "name": "rfcat",
+      "domain": "rf",
+      "desc": "Sub-GHz CC1111-based transceiver framework (YARD Stick One + similar dongles).",
+      "url": "https://github.com/atlas0fd00m/rfcat"
+    },
+    {
+      "name": "Scapy 6LoWPAN",
+      "domain": "rf",
+      "desc": "Scapy 6LoWPAN layer for IPv6-over-802.15.4 packet crafting.",
+      "url": "https://scapy.readthedocs.io"
+    },
+    {
+      "name": "kalibrate-rtl",
+      "domain": "rf",
+      "desc": "GSM channel frequency calibration for RTL-SDR dongles.",
+      "url": "https://github.com/steve-m/kalibrate-rtl"
+    },
+    {
+      "name": "SavvyCAN",
+      "domain": "automotive",
+      "desc": "GUI for CAN reverse engineering, signal mapping, and DBC editing.",
+      "url": "https://github.com/collin80/SavvyCAN"
+    },
+    {
+      "name": "BUSMASTER",
+      "domain": "automotive",
+      "desc": "Robert Bosch open-source CAN / LIN analysis and simulation suite.",
+      "url": "https://github.com/rbei-etas/busmaster"
+    },
+    {
+      "name": "Scapy automotive",
+      "domain": "automotive",
+      "desc": "ISO-TP, UDS, GMLAN, DoIP, SOME/IP layers in Scapy for raw automotive packet crafting.",
+      "url": "https://scapy.readthedocs.io/en/latest/layers/automotive.html"
+    },
+    {
+      "name": "AGL fuzzer",
+      "domain": "automotive",
+      "desc": "Fuzzing harness for Automotive Grade Linux IVI over D-Bus and MQTT surfaces.",
+      "url": "https://www.automotivelinux.org"
+    },
+    {
+      "name": "openDICOM-scanner",
+      "domain": "medical",
+      "desc": "Active DICOM service enumeration: C-FIND, C-MOVE, C-STORE probing.",
+      "url": "https://github.com/d3vilbug/HackBar"
+    },
+    {
+      "name": "Orthanc",
+      "domain": "medical",
+      "desc": "Open-source DICOM server, ideal lab target for medical-device assessment.",
+      "url": "https://www.orthanc-server.com"
+    },
+    {
+      "name": "h7v2-fuzz",
+      "domain": "medical",
+      "desc": "HL7 v2 message fuzzer targeting hospital EHR/EMR parsers.",
+      "url": "https://github.com/jknapka/h7v2-fuzz"
+    },
+    {
+      "name": "FHIR Validator",
+      "domain": "medical",
+      "desc": "Official HL7 FHIR R4/R5 resource and endpoint validator.",
+      "url": "https://github.com/hapifhir/org.hl7.fhir.core"
+    },
+    {
+      "name": "medusa-medical",
+      "domain": "medical",
+      "desc": "Network scanner specialised for medical-device communication ports.",
+      "url": "https://github.com/jmichelin/medusa"
+    },
+    {
+      "name": "netdiscover",
+      "domain": "network",
+      "desc": "ARP-based live-host discovery (faster than nmap for LAN sweeps).",
+      "url": "https://github.com/netdiscover-scanner/netdiscover"
+    },
+    {
+      "name": "zeek",
+      "domain": "network",
+      "desc": "Network analysis framework formerly Bro, premier passive IoT traffic profiler.",
+      "url": "https://zeek.org"
+    },
+    {
+      "name": "suricata",
+      "domain": "network",
+      "desc": "High-performance IDS/IPS with ET-ICS rule sets for OT traffic.",
+      "url": "https://suricata.io"
+    },
+    {
+      "name": "p0f",
+      "domain": "network",
+      "desc": "Passive OS and device fingerprinting without sending a single packet.",
+      "url": "https://lcamtuf.coredump.cx/p0f3/"
+    },
+    {
+      "name": "coap-shepherd",
+      "domain": "network",
+      "desc": "Protocol-level fuzzer for CoAP servers and constrained-device endpoints.",
+      "url": "https://github.com/eclipse/coap-shepherd"
+    },
+    {
+      "name": "mqtt-fuzzer",
+      "domain": "network",
+      "desc": "Mutation fuzzer targeting MQTT brokers and client implementations.",
+      "url": "https://github.com/Z-0ne/MQTTSA"
+    },
+    {
+      "name": "WireEdit",
+      "domain": "network",
+      "desc": "Binary packet editor for crafting malformed Ethernet / IP / app-layer frames.",
+      "url": "https://wireedit.com"
+    },
+    {
+      "name": "apkanalyzer",
+      "domain": "android",
+      "desc": "Google's official APK static-analysis CLI included with the Android SDK.",
+      "url": "https://developer.android.com/studio/command-line/apkanalyzer"
+    },
+    {
+      "name": "AndroBugs",
+      "domain": "android",
+      "desc": "Android app security scanner with 200+ static-analysis rules.",
+      "url": "https://github.com/AndroBugs/AndroBugs_Framework"
+    },
+    {
+      "name": "QARK",
+      "domain": "android",
+      "desc": "LinkedIn's Quick Android Review Kit, static SAST for APKs.",
+      "url": "https://github.com/linkedin/qark"
+    },
+    {
+      "name": "Appium",
+      "domain": "android",
+      "desc": "Mobile UI automation framework for dynamic security testing of companion apps.",
+      "url": "https://appium.io"
+    },
+    {
+      "name": "medusa-android",
+      "domain": "android",
+      "desc": "Frida-based scriptable Android instrumentation framework.",
+      "url": "https://github.com/Ch0pin/medusa"
+    },
+    {
+      "name": "syft",
+      "domain": "supplychain",
+      "desc": "Generate CycloneDX / SPDX SBOMs from container images, firmware, filesystems.",
+      "url": "https://github.com/anchore/syft"
+    },
+    {
+      "name": "grype",
+      "domain": "supplychain",
+      "desc": "Vulnerability scanner that matches an SBOM or image against CVE / GHSA feeds.",
+      "url": "https://github.com/anchore/grype"
+    },
+    {
+      "name": "cdxgen",
+      "domain": "supplychain",
+      "desc": "CycloneDX SBOM generator for 20+ language ecosystems (npm, pip, go, rust, ...).",
+      "url": "https://github.com/CycloneDX/cdxgen"
+    },
+    {
+      "name": "bomber",
+      "domain": "supplychain",
+      "desc": "Scan SBOMs against OSV, Sonatype, GitHub for vulns and policy violations.",
+      "url": "https://github.com/devops-kung-fu/bomber"
+    },
+    {
+      "name": "trivy",
+      "domain": "supplychain",
+      "desc": "Container + filesystem + IaC vulnerability scanner with SBOM output.",
+      "url": "https://github.com/aquasecurity/trivy"
+    },
+    {
+      "name": "osv-scanner",
+      "domain": "supplychain",
+      "desc": "Google's OSV-database vulnerability scanner for OSS dependencies.",
+      "url": "https://github.com/google/osv-scanner"
     }
   ]
 }

@@ -90,6 +90,12 @@
       "name": "Supply Chain / SBOM",
       "color": "#ffd866",
       "blurb": "SBOM generation, vulnerability matching, supply-chain provenance (CycloneDX, SPDX, OSV)."
+    },
+    {
+      "id": "voip",
+      "name": "VoIP / Telecom",
+      "color": "#ff9bff",
+      "blurb": "SIP, RTP, IAX2 attacks, PBX assessment, VLAN hopping on VoIP networks."
     }
   ],
   "tools": [
@@ -1838,6 +1844,108 @@
       "domain": "supplychain",
       "desc": "Google's OSV-database vulnerability scanner for OSS dependencies.",
       "url": "https://github.com/google/osv-scanner"
+    },
+    {
+      "name": "SIPVicious",
+      "domain": "voip",
+      "desc": "Canonical SIP toolkit: svmap (scan), svwar (extension brute), svcrack (password), svreport, svcrash.",
+      "url": "https://github.com/EnableSecurity/sipvicious"
+    },
+    {
+      "name": "sipsak",
+      "domain": "voip",
+      "desc": "SIP Swiss Army Knife: option pings, OPTIONS / INVITE / REGISTER probing, message flood.",
+      "url": "https://github.com/nils-ohlmeier/sipsak"
+    },
+    {
+      "name": "Mr.SIP",
+      "domain": "voip",
+      "desc": "Modern SIP attack tool: SIP-based DDoS, MITM, INVITE / REGISTER flood, enumeration.",
+      "url": "https://github.com/meliht/Mr.SIP"
+    },
+    {
+      "name": "SIPp",
+      "domain": "voip",
+      "desc": "Open-source SIP traffic generator widely used for load testing and offensive replay.",
+      "url": "https://github.com/SIPp/sipp"
+    },
+    {
+      "name": "inviteflood",
+      "domain": "voip",
+      "desc": "Generate large numbers of SIP INVITE messages to flood SIP servers and proxies.",
+      "url": "https://github.com/foreni-packages/inviteflood"
+    },
+    {
+      "name": "rtpflood",
+      "domain": "voip",
+      "desc": "Flood live RTP sessions with crafted packets to disrupt calls in progress.",
+      "url": "https://github.com/foreni-packages/rtpflood"
+    },
+    {
+      "name": "iaxflood",
+      "domain": "voip",
+      "desc": "Flood Inter-Asterisk eXchange (IAX2) sessions, denial-of-service against Asterisk PBX.",
+      "url": "https://github.com/foreni-packages/iaxflood"
+    },
+    {
+      "name": "enumiax",
+      "domain": "voip",
+      "desc": "IAX2 username enumeration via response-time analysis of IAX2 REGREQ.",
+      "url": "https://github.com/foreni-packages/enumiax"
+    },
+    {
+      "name": "rtpinsertsound",
+      "domain": "voip",
+      "desc": "Inject WAV audio into a live RTP stream (call hijack / fake-audio attacks).",
+      "url": "https://github.com/foreni-packages/rtpinsertsound"
+    },
+    {
+      "name": "rtpmixsound",
+      "domain": "voip",
+      "desc": "Mix arbitrary audio into an existing RTP stream without breaking the call.",
+      "url": "https://github.com/foreni-packages/rtpmixsound"
+    },
+    {
+      "name": "rtpbreak",
+      "domain": "voip",
+      "desc": "Reconstruct RTP sessions from a pcap, output to WAV - voice recovery from captured calls.",
+      "url": "https://github.com/foreni-packages/rtpbreak"
+    },
+    {
+      "name": "ucsniff",
+      "domain": "voip",
+      "desc": "VoIP eavesdropping suite: ARP-spoof a switched LAN, decode RTP, play back calls.",
+      "url": "https://sourceforge.net/projects/ucsniff/"
+    },
+    {
+      "name": "vomit",
+      "domain": "voip",
+      "desc": "Convert Cisco IP-phone RTP captures into WAV - the original VoIP eavesdropping tool.",
+      "url": "http://vomit.xtdnet.nl/"
+    },
+    {
+      "name": "VoIPHopper",
+      "domain": "voip",
+      "desc": "VLAN-hop a workstation onto the dedicated voice VLAN by spoofing CDP / LLDP.",
+      "url": "https://github.com/cdpxe/voiphopper"
+    },
+    {
+      "name": "Asterisk",
+      "domain": "voip",
+      "desc": "Open-source PBX, the standard lab target for SIP / IAX attack research.",
+      "url": "https://www.asterisk.org"
+    },
+    {
+      "name": "Kamailio",
+      "domain": "voip",
+      "desc": "High-performance open-source SIP server / proxy, useful as a lab target and pivot.",
+      "url": "https://www.kamailio.org"
+    },
+    {
+      "name": "Homer",
+      "domain": "voip",
+      "desc": "HEP-based SIP analytics + capture agent, used both defensively and offensively.",
+      "url": "https://github.com/sipcapture/homer"
     }
   ]
 }

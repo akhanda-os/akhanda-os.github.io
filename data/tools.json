@@ -96,6 +96,36 @@
       "name": "VoIP / Telecom",
       "color": "#ff9bff",
       "blurb": "SIP, RTP, IAX2 attacks, PBX assessment, VLAN hopping on VoIP networks."
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud / Container",
+      "color": "#fa8072",
+      "blurb": "AWS / Azure / GCP cloud security, IAC, Kubernetes, IoT cloud platforms."
+    },
+    {
+      "id": "drone",
+      "name": "Drone / UAV",
+      "color": "#ff5a8a",
+      "blurb": "MAVLink, ArduPilot, PX4, DJI, drone command-link security."
+    },
+    {
+      "id": "web",
+      "name": "Web / App",
+      "color": "#42d4f4",
+      "blurb": "Web admin panels on connected devices: scanners, fuzzers, exploit tooling."
+    },
+    {
+      "id": "ai",
+      "name": "AI / LLM",
+      "color": "#f7b801",
+      "blurb": "LLM red teaming, model attacks, prompt injection, adversarial ML."
+    },
+    {
+      "id": "ios",
+      "name": "iOS / Apple",
+      "color": "#c0c0c0",
+      "blurb": "iPhone, iPad, watchOS companion-app and device security."
     }
   ],
   "tools": [
@@ -2222,6 +2252,636 @@
       "domain": "automotive",
       "desc": "Ford OpenXC vehicle interface tooling for telemetry + control reverse-engineering.",
       "url": "https://github.com/openxc/openxc-python"
+    },
+    {
+      "name": "Prowler",
+      "domain": "cloud",
+      "desc": "AWS / GCP / Azure / Kubernetes security assessment tool with 300+ checks.",
+      "url": "https://github.com/prowler-cloud/prowler"
+    },
+    {
+      "name": "ScoutSuite",
+      "domain": "cloud",
+      "desc": "Multi-cloud security auditing: AWS, Azure, GCP, OCI, Alibaba, Digital Ocean.",
+      "url": "https://github.com/nccgroup/ScoutSuite"
+    },
+    {
+      "name": "Pacu",
+      "domain": "cloud",
+      "desc": "AWS exploitation framework, Metasploit-style modules for cloud post-exploitation.",
+      "url": "https://github.com/RhinoSecurityLabs/pacu"
+    },
+    {
+      "name": "cs-suite",
+      "domain": "cloud",
+      "desc": "Cloud security suite covering AWS, GCP, Azure and Kubernetes.",
+      "url": "https://github.com/SecurityFTW/cs-suite"
+    },
+    {
+      "name": "kube-hunter",
+      "domain": "cloud",
+      "desc": "Hunts for security weaknesses in Kubernetes clusters - active + passive.",
+      "url": "https://github.com/aquasecurity/kube-hunter"
+    },
+    {
+      "name": "kube-bench",
+      "domain": "cloud",
+      "desc": "CIS Kubernetes Benchmark runner from Aqua Security.",
+      "url": "https://github.com/aquasecurity/kube-bench"
+    },
+    {
+      "name": "Terrascan",
+      "domain": "cloud",
+      "desc": "Static IaC scanner for Terraform, Kubernetes, Docker, Helm, Cloudformation.",
+      "url": "https://github.com/tenable/terrascan"
+    },
+    {
+      "name": "tfsec",
+      "domain": "cloud",
+      "desc": "Terraform static-analysis security scanner.",
+      "url": "https://github.com/aquasecurity/tfsec"
+    },
+    {
+      "name": "Checkov",
+      "domain": "cloud",
+      "desc": "Policy-as-code static analyzer for Terraform, CloudFormation, K8s, Helm, ARM.",
+      "url": "https://github.com/bridgecrewio/checkov"
+    },
+    {
+      "name": "Falco",
+      "domain": "cloud",
+      "desc": "Runtime intrusion detection for containers and Kubernetes.",
+      "url": "https://github.com/falcosecurity/falco"
+    },
+    {
+      "name": "CloudSploit",
+      "domain": "cloud",
+      "desc": "Cloud security misconfiguration scanner for AWS, Azure, GCP, OCI.",
+      "url": "https://github.com/aquasecurity/cloudsploit"
+    },
+    {
+      "name": "ROADtools",
+      "domain": "cloud",
+      "desc": "Azure AD reconnaissance and audit toolkit (Recon + Visualization).",
+      "url": "https://github.com/dirkjanm/ROADtools"
+    },
+    {
+      "name": "aws-iot-tester",
+      "domain": "cloud",
+      "desc": "AWS IoT Device Tester / Greengrass component validation toolkit.",
+      "url": "https://docs.aws.amazon.com/freertos/latest/userguide/device-tester.html"
+    },
+    {
+      "name": "CloudFox",
+      "domain": "cloud",
+      "desc": "Cloud penetration testing helper that finds attack-paths in AWS / Azure.",
+      "url": "https://github.com/BishopFox/cloudfox"
+    },
+    {
+      "name": "MAVProxy",
+      "domain": "drone",
+      "desc": "Ground-station MAVLink proxy and CLI for ArduPilot / PX4 vehicles.",
+      "url": "https://github.com/ArduPilot/MAVProxy"
+    },
+    {
+      "name": "ArduPilot SITL",
+      "domain": "drone",
+      "desc": "Software-in-the-loop simulator for ArduPilot autopilot research.",
+      "url": "https://github.com/ArduPilot/ardupilot"
+    },
+    {
+      "name": "PX4 SITL",
+      "domain": "drone",
+      "desc": "PX4 autopilot software-in-the-loop simulator for drone protocol research.",
+      "url": "https://github.com/PX4/PX4-Autopilot"
+    },
+    {
+      "name": "DroneSploit",
+      "domain": "drone",
+      "desc": "Metasploit-style framework for drone exploitation modules.",
+      "url": "https://github.com/AlexandreD/dronesploit"
+    },
+    {
+      "name": "gr-mavlink",
+      "domain": "drone",
+      "desc": "GNU Radio dissector + sniffer for MAVLink RF telemetry links.",
+      "url": "https://github.com/SignalsResearchGroup/gr-mavlink"
+    },
+    {
+      "name": "DJI-Firmware-Tools",
+      "domain": "drone",
+      "desc": "Firmware extraction and patching for DJI Phantom, Mavic, Spark and accessories.",
+      "url": "https://github.com/o-gs/dji-firmware-tools"
+    },
+    {
+      "name": "Gazebo (SITL)",
+      "domain": "drone",
+      "desc": "3-D physics simulator used as the SITL world for drone attack research.",
+      "url": "https://gazebosim.org"
+    },
+    {
+      "name": "MAVSec",
+      "domain": "drone",
+      "desc": "Security analysis framework specifically for MAVLink and ArduPilot stacks.",
+      "url": "https://github.com/aniskoubaa/MAVSec"
+    },
+    {
+      "name": "dronekit-python",
+      "domain": "drone",
+      "desc": "Python API for MAVLink-compatible vehicles - used for fuzzing and automation.",
+      "url": "https://github.com/dronekit/dronekit-python"
+    },
+    {
+      "name": "DroneSec",
+      "domain": "drone",
+      "desc": "Drone security testing and reverse engineering resources.",
+      "url": "https://dronesec.com"
+    },
+    {
+      "name": "OWASP ZAP",
+      "domain": "web",
+      "desc": "OWASP Zed Attack Proxy: intercepting proxy + active web scanner.",
+      "url": "https://github.com/zaproxy/zaproxy"
+    },
+    {
+      "name": "sqlmap",
+      "domain": "web",
+      "desc": "Automated SQL injection and database takeover tool.",
+      "url": "https://sqlmap.org"
+    },
+    {
+      "name": "wpscan",
+      "domain": "web",
+      "desc": "WordPress vulnerability scanner with plugin / theme database.",
+      "url": "https://wpscan.com"
+    },
+    {
+      "name": "dirsearch",
+      "domain": "web",
+      "desc": "Brute-force web paths with smart wordlists for hidden admin / API surfaces.",
+      "url": "https://github.com/maurosoria/dirsearch"
+    },
+    {
+      "name": "commix",
+      "domain": "web",
+      "desc": "Automated command-injection exploitation tool.",
+      "url": "https://github.com/commixproject/commix"
+    },
+    {
+      "name": "xsser",
+      "domain": "web",
+      "desc": "Cross-site scripting (XSS) discovery and exploitation framework.",
+      "url": "https://github.com/epsylon/xsser"
+    },
+    {
+      "name": "dalfox",
+      "domain": "web",
+      "desc": "Fast XSS scanner and parameter analyzer in Go.",
+      "url": "https://github.com/hahwul/dalfox"
+    },
+    {
+      "name": "paramspider",
+      "domain": "web",
+      "desc": "Mining URL parameters from web archives for fuzzing inputs.",
+      "url": "https://github.com/devanshbatham/ParamSpider"
+    },
+    {
+      "name": "Burp Suite",
+      "domain": "web",
+      "desc": "Community edition: intercepting proxy plus repeater / decoder / comparer.",
+      "url": "https://portswigger.net/burp/communitydownload"
+    },
+    {
+      "name": "nikto",
+      "domain": "web",
+      "desc": "Web server scanner that checks for outdated software and common misconfigurations.",
+      "url": "https://github.com/sullo/nikto"
+    },
+    {
+      "name": "joomscan",
+      "domain": "web",
+      "desc": "Joomla CMS vulnerability scanner.",
+      "url": "https://github.com/OWASP/joomscan"
+    },
+    {
+      "name": "droopescan",
+      "domain": "web",
+      "desc": "CMS scanner for Drupal, SilverStripe, Wordpress.",
+      "url": "https://github.com/SamJoan/droopescan"
+    },
+    {
+      "name": "katana",
+      "domain": "web",
+      "desc": "Next-generation web crawler (ProjectDiscovery) for asset discovery.",
+      "url": "https://github.com/projectdiscovery/katana"
+    },
+    {
+      "name": "waybackurls",
+      "domain": "web",
+      "desc": "Pull URLs known to Wayback Machine for a target - passive surface mapping.",
+      "url": "https://github.com/tomnomnom/waybackurls"
+    },
+    {
+      "name": "hakrawler",
+      "domain": "web",
+      "desc": "Fast Go web-crawler for endpoint discovery.",
+      "url": "https://github.com/hakluke/hakrawler"
+    },
+    {
+      "name": "feroxbuster",
+      "domain": "web",
+      "desc": "Fast Rust-based content-discovery tool with recursion.",
+      "url": "https://github.com/epi052/feroxbuster"
+    },
+    {
+      "name": "garak",
+      "domain": "ai",
+      "desc": "LLM vulnerability scanner: probes for jailbreaks, prompt injections, data leakage.",
+      "url": "https://github.com/leondz/garak"
+    },
+    {
+      "name": "PyRIT",
+      "domain": "ai",
+      "desc": "Microsoft Python Risk Identification Tool for AI / red-teaming.",
+      "url": "https://github.com/Azure/PyRIT"
+    },
+    {
+      "name": "MITRE ATLAS",
+      "domain": "ai",
+      "desc": "Adversarial Threat Landscape framework for AI systems (ATT&CK-equivalent).",
+      "url": "https://atlas.mitre.org"
+    },
+    {
+      "name": "promptmap",
+      "domain": "ai",
+      "desc": "Test prompt injection vulnerabilities of GPT-based custom apps and chatbots.",
+      "url": "https://github.com/utkusen/promptmap"
+    },
+    {
+      "name": "Vigil",
+      "domain": "ai",
+      "desc": "LLM prompt injection scanner with detector chains.",
+      "url": "https://github.com/deadbits/vigil-llm"
+    },
+    {
+      "name": "llm-attacks",
+      "domain": "ai",
+      "desc": "Universal adversarial suffix attacks against open-source LLMs.",
+      "url": "https://github.com/llm-attacks/llm-attacks"
+    },
+    {
+      "name": "Counterfit",
+      "domain": "ai",
+      "desc": "Microsoft generic command-line tool for assessing the security of ML systems.",
+      "url": "https://github.com/Azure/counterfit"
+    },
+    {
+      "name": "adversarial-robustness-toolbox",
+      "domain": "ai",
+      "desc": "IBM ART: Python lib for adversarial ML attacks, defences, certification.",
+      "url": "https://github.com/Trusted-AI/adversarial-robustness-toolbox"
+    },
+    {
+      "name": "Giskard",
+      "domain": "ai",
+      "desc": "Open-source eval + red-teaming for ML / LLM applications.",
+      "url": "https://github.com/Giskard-AI/giskard"
+    },
+    {
+      "name": "nb-defense",
+      "domain": "ai",
+      "desc": "Notebook security scanner for ML notebooks (credentials, dependencies, code).",
+      "url": "https://github.com/protectai/nbdefense"
+    },
+    {
+      "name": "libimobiledevice",
+      "domain": "ios",
+      "desc": "Cross-platform protocol library + CLI utilities for iPhone / iPad communication.",
+      "url": "https://libimobiledevice.org"
+    },
+    {
+      "name": "ideviceinstaller",
+      "domain": "ios",
+      "desc": "Install / list / uninstall apps on iOS devices over USB / network.",
+      "url": "https://github.com/libimobiledevice/ideviceinstaller"
+    },
+    {
+      "name": "ios-deploy",
+      "domain": "ios",
+      "desc": "Install and debug iPhone apps from the command-line.",
+      "url": "https://github.com/ios-control/ios-deploy"
+    },
+    {
+      "name": "class-dump",
+      "domain": "ios",
+      "desc": "Dump Objective-C class declarations from a Mach-O binary.",
+      "url": "https://github.com/nygard/class-dump"
+    },
+    {
+      "name": "Frida-iOS-dump",
+      "domain": "ios",
+      "desc": "Decrypt and dump iOS apps from a jailbroken device using Frida.",
+      "url": "https://github.com/AloneMonkey/frida-ios-dump"
+    },
+    {
+      "name": "Theos",
+      "domain": "ios",
+      "desc": "Cross-platform suite for developing iOS jailbreak tweaks.",
+      "url": "https://github.com/theos/theos"
+    },
+    {
+      "name": "iSpy",
+      "domain": "ios",
+      "desc": "Runtime iOS reverse-engineering framework with HTML / WebKit UI.",
+      "url": "https://github.com/BishopFox/iSpy"
+    },
+    {
+      "name": "Passionfruit",
+      "domain": "ios",
+      "desc": "Frida-based iOS dynamic analysis web UI.",
+      "url": "https://github.com/chaitin/passionfruit"
+    },
+    {
+      "name": "Cycript",
+      "domain": "ios",
+      "desc": "Interactive console for examining and modifying iOS application state at runtime.",
+      "url": "http://www.cycript.org"
+    },
+    {
+      "name": "checkra1n",
+      "domain": "ios",
+      "desc": "Bootrom-based iOS jailbreak (A7 - A11) for security research devices.",
+      "url": "https://checkra.in"
+    },
+    {
+      "name": "palera1n",
+      "domain": "ios",
+      "desc": "Newer A8 - A11 iOS jailbreak fork, tracks current iOS releases.",
+      "url": "https://palera.in"
+    },
+    {
+      "name": "IPATool",
+      "domain": "ios",
+      "desc": "Command-line tool for downloading iOS .ipa app packages from the App Store.",
+      "url": "https://github.com/majd/ipatool"
+    },
+    {
+      "name": "ChirpStack",
+      "domain": "iot",
+      "desc": "Open-source LoRaWAN network server + gateway bridge, useful as a lab target.",
+      "url": "https://www.chirpstack.io"
+    },
+    {
+      "name": "The Things Stack",
+      "domain": "iot",
+      "desc": "Open-source LoRaWAN network server, multi-tenant version of TTN.",
+      "url": "https://github.com/TheThingsNetwork/lorawan-stack"
+    },
+    {
+      "name": "LoRaWAN-Auditor",
+      "domain": "iot",
+      "desc": "Audit LoRaWAN device join requests + frame counters for security weaknesses.",
+      "url": "https://github.com/IOActive/loraWan-Auditor"
+    },
+    {
+      "name": "lorca",
+      "domain": "iot",
+      "desc": "LoRa Custom Attack tool - join-replay, frame-count rollback, JoinServer abuse.",
+      "url": "https://github.com/IOActive/lorca"
+    },
+    {
+      "name": "Tuya-convert",
+      "domain": "iot",
+      "desc": "Flash custom firmware (Tasmota / ESPHome) to Tuya-based smart-home devices OTA.",
+      "url": "https://github.com/ct-Open-Source/tuya-convert"
+    },
+    {
+      "name": "AWS IoT Greengrass Tester",
+      "domain": "iot",
+      "desc": "Validate AWS IoT Greengrass component security and behaviour.",
+      "url": "https://github.com/aws-greengrass/aws-greengrass-testing"
+    },
+    {
+      "name": "Azure IoT Explorer",
+      "domain": "iot",
+      "desc": "GUI for browsing Azure IoT Hub devices, twins, direct methods - useful for testing.",
+      "url": "https://github.com/Azure/azure-iot-explorer"
+    },
+    {
+      "name": "DroneCAN",
+      "domain": "iot",
+      "desc": "DroneCAN / UAVCAN bus tools (CAN-based UAV bus, related to automotive CAN).",
+      "url": "https://github.com/DroneCAN/DroneCAN"
+    },
+    {
+      "name": "KNXmap",
+      "domain": "ics",
+      "desc": "KNX/KNX-IP scanner + group-write attack tool for building-automation networks.",
+      "url": "https://github.com/takeshixx/knxmap"
+    },
+    {
+      "name": "KNX-attack-toolkit",
+      "domain": "ics",
+      "desc": "Collected exploits + PoCs against KNX Secure and unsecure deployments.",
+      "url": "https://github.com/dani-l/knx-attack-toolkit"
+    },
+    {
+      "name": "dlms-cosem",
+      "domain": "ics",
+      "desc": "Python DLMS/COSEM client for ANSI smart meter communication research.",
+      "url": "https://github.com/pwitab/dlms-cosem"
+    },
+    {
+      "name": "libmbus",
+      "domain": "ics",
+      "desc": "M-Bus (Meter-Bus EN 13757) client library and CLI for energy meter research.",
+      "url": "https://github.com/rscada/libmbus"
+    },
+    {
+      "name": "c1222-tools",
+      "domain": "ics",
+      "desc": "ANSI C12.22 smart-meter networking client + scanner.",
+      "url": "https://github.com/openc1222/c1222"
+    },
+    {
+      "name": "lonworks-tools",
+      "domain": "ics",
+      "desc": "LonWorks / LonTalk client for building-automation legacy networks.",
+      "url": "https://github.com/lonworks/openlcb"
+    },
+    {
+      "name": "dali-tools",
+      "domain": "ics",
+      "desc": "DALI (Digital Addressable Lighting Interface) bus tools for commercial lighting.",
+      "url": "https://github.com/sde1000/python-dali"
+    },
+    {
+      "name": "S7Scan",
+      "domain": "ics",
+      "desc": "Siemens S7 PLC enumeration: model, firmware, security setting, slots.",
+      "url": "https://github.com/klsecservices/s7scan"
+    },
+    {
+      "name": "onvif-cli",
+      "domain": "network",
+      "desc": "ONVIF camera command-line client: discover, configure, snapshot, PTZ test.",
+      "url": "https://github.com/quatanium/python-onvif-zeep"
+    },
+    {
+      "name": "ONVIF-Discovery",
+      "domain": "network",
+      "desc": "WS-Discovery scanner for ONVIF-capable cameras and NVRs.",
+      "url": "https://github.com/FalsehoodMakesPerfect/onvif-discovery"
+    },
+    {
+      "name": "rtsp-recon",
+      "domain": "network",
+      "desc": "RTSP stream scanner with credential brute-force.",
+      "url": "https://github.com/Tek-Security-Group/rtsp_recon"
+    },
+    {
+      "name": "RTSPbrute",
+      "domain": "network",
+      "desc": "Mass RTSP credential brute-force against IP cameras.",
+      "url": "https://github.com/Tek-Security-Group/rtsp-brute"
+    },
+    {
+      "name": "SSDP-Scanner",
+      "domain": "network",
+      "desc": "Discover UPnP / DLNA devices via SSDP multicast queries.",
+      "url": "https://github.com/dgrr/ssdp-scanner"
+    },
+    {
+      "name": "UPnP-Pentest",
+      "domain": "network",
+      "desc": "UPnP exploitation toolkit - service exec, port mapping, info leak.",
+      "url": "https://github.com/davidfortytwo/upnp-pentest-toolkit"
+    },
+    {
+      "name": "DIAL-scan",
+      "domain": "network",
+      "desc": "Discover DIAL / Chromecast / smart-TV cast endpoints on a LAN.",
+      "url": "https://github.com/teamupnp/dial-discovery"
+    },
+    {
+      "name": "smarttv-tools",
+      "domain": "network",
+      "desc": "Reference scripts for Tizen / webOS / Android-TV / Roku / FireTV remote APIs.",
+      "url": "https://github.com/Aymkdn/assistant-freebox-cloud"
+    },
+    {
+      "name": "Rubber Ducky encoder",
+      "domain": "embedded",
+      "desc": "Hak5 Rubber Ducky payload compiler: turn DuckyScript into inject.bin.",
+      "url": "https://github.com/hak5/usbrubberducky-payloads"
+    },
+    {
+      "name": "MalDuino",
+      "domain": "embedded",
+      "desc": "ATmega32U4-based BadUSB alternative to Rubber Ducky, fully open-source.",
+      "url": "https://github.com/JustCallMeKoko/MalDuino"
+    },
+    {
+      "name": "PCILeech",
+      "domain": "embedded",
+      "desc": "Direct Memory Access (DMA) attack toolkit against locked workstations / servers.",
+      "url": "https://github.com/ufrisk/pcileech"
+    },
+    {
+      "name": "Spycheck (ThunderSpy)",
+      "domain": "embedded",
+      "desc": "Check whether a Thunderbolt host is vulnerable to the ThunderSpy DMA family.",
+      "url": "https://thunderspy.io"
+    },
+    {
+      "name": "URGENT/11 PoC",
+      "domain": "embedded",
+      "desc": "Proof of concept exploits for the URGENT/11 VxWorks IPnet vulnerabilities.",
+      "url": "https://github.com/0xCharlieDelta/urgent11"
+    },
+    {
+      "name": "Ripple20 PoCs",
+      "domain": "embedded",
+      "desc": "JSOF Ripple20 Treck TCP/IP stack exploit references.",
+      "url": "https://www.jsof-tech.com/disclosures/ripple20/"
+    },
+    {
+      "name": "Zephyr-research",
+      "domain": "embedded",
+      "desc": "Tools and references for auditing Zephyr RTOS-based devices.",
+      "url": "https://github.com/zephyrproject-rtos/zephyr"
+    },
+    {
+      "name": "FreeRTOS-research",
+      "domain": "embedded",
+      "desc": "FreeRTOS attack research collection: AWS FreeRTOS bug refs, MPU bypass tooling.",
+      "url": "https://github.com/FreeRTOS/FreeRTOS"
+    },
+    {
+      "name": "SIMjacker-PoC",
+      "domain": "voip",
+      "desc": "Proof-of-concept for the SIMjacker S@T browser binary-SMS attack.",
+      "url": "https://github.com/r0skar/simjacker-poc"
+    },
+    {
+      "name": "BIP-toolkit",
+      "domain": "voip",
+      "desc": "Bearer Independent Protocol (BIP) toolkit attack tools for SIM-card abuse.",
+      "url": "https://github.com/srlabs/BIP-toolkit"
+    },
+    {
+      "name": "lpac",
+      "domain": "voip",
+      "desc": "Local Profile Assistant Client for eSIM provisioning and profile testing.",
+      "url": "https://github.com/estkme-group/lpac"
+    },
+    {
+      "name": "AT-command-fuzzer",
+      "domain": "voip",
+      "desc": "AT command set fuzzer for cellular modems - LTE/NB-IoT/2G modems all reachable.",
+      "url": "https://github.com/atfuzz/atfuzz"
+    },
+    {
+      "name": "SCAT",
+      "domain": "voip",
+      "desc": "Signaling Collection And Analysis Tool - Qualcomm and Samsung baseband logger.",
+      "url": "https://github.com/fgsect/scat"
+    },
+    {
+      "name": "gr-acars",
+      "domain": "rf",
+      "desc": "ACARS (Aircraft Communications Addressing) RF decoder for GNU Radio.",
+      "url": "https://github.com/jvde-github/acarsdec"
+    },
+    {
+      "name": "ACARSdec",
+      "domain": "rf",
+      "desc": "Lightweight ACARS decoder for ADS-B sticks and AirSpy.",
+      "url": "https://github.com/TLeconte/acarsdec"
+    },
+    {
+      "name": "JAERO",
+      "domain": "rf",
+      "desc": "Demodulator + decoder for Inmarsat Classic Aero satellite-link voice / data.",
+      "url": "https://github.com/jontio/JAERO"
+    },
+    {
+      "name": "gr-satellites",
+      "domain": "rf",
+      "desc": "GNU Radio out-of-tree module for amateur and CubeSat satellite reception.",
+      "url": "https://github.com/daniestevez/gr-satellites"
+    },
+    {
+      "name": "SatNOGS Client",
+      "domain": "rf",
+      "desc": "Open-source ground-station client for the SatNOGS satellite network.",
+      "url": "https://github.com/satnogs/satnogs-client"
+    },
+    {
+      "name": "opensky-tools",
+      "domain": "rf",
+      "desc": "OpenSky Network API + tools for ADS-B aircraft tracking research.",
+      "url": "https://github.com/openskynetwork/opensky-api"
     }
   ]
 }

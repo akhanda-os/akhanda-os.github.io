@@ -542,6 +542,114 @@ td.yes { color: var(--accent); }
 
 #toolcount { color: var(--fg-mute); font-family: var(--font-mono); font-size: 0.9rem; }
 
+/* Bulk expand/collapse controls under the filter bar */
+.bulk-controls {
+  display: flex; justify-content: flex-end; gap: 8px;
+  margin: 6px 0 18px;
+}
+.bulk-btn {
+  font-family: var(--font-mono); font-size: 0.78rem;
+  padding: 6px 12px; border-radius: 999px;
+  background: transparent; color: var(--fg-mute);
+  border: 1px solid var(--border); cursor: pointer;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.bulk-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ============ ACCORDION GROUPED VIEW (per-domain) ============ */
+.domain-section {
+  margin-bottom: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent);
+  overflow: hidden;
+  transition: border-color 150ms ease;
+}
+.domain-section:hover { border-color: var(--c, var(--accent)); }
+.domain-section.section-hidden { display: none; }
+
+.domain-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  grid-template-areas:
+    "caret name  count"
+    "caret blurb count";
+  align-items: center;
+  gap: 4px 12px;
+  padding: 16px 20px;
+  border: 0;
+  background: transparent;
+  color: var(--fg);
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: background 150ms ease;
+}
+.domain-header:hover { background: rgba(255,255,255,0.025); }
+.domain-header .caret {
+  grid-area: caret;
+  color: var(--c, var(--accent));
+  font-size: 0.85rem;
+  transition: transform 200ms ease;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+.domain-section.collapsed .domain-header .caret { transform: rotate(0deg); }
+
+.domain-header .domain-name {
+  grid-area: name;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--c, var(--fg));
+  letter-spacing: 0.01em;
+}
+.domain-header .domain-count {
+  grid-area: count;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  color: var(--c, var(--fg-mute));
+  border: 1px solid var(--border);
+  align-self: center;
+}
+.domain-header .domain-blurb {
+  grid-area: blurb;
+  font-size: 0.82rem;
+  color: var(--fg-mute);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.domain-tools {
+  padding: 0 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+  max-height: 8000px;
+  opacity: 1;
+  transition: max-height 350ms ease, opacity 250ms ease, padding 250ms ease;
+}
+.domain-section.collapsed .domain-tools {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .domain-header {
+    grid-template-columns: 20px 1fr auto;
+    padding: 14px 16px;
+  }
+  .domain-header .domain-blurb { font-size: 0.75rem; }
+  .domain-tools { padding: 0 14px 16px; grid-template-columns: 1fr; }
+}
+
 /* Tool card grid */
 .toolgrid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 .tool {

@@ -2882,6 +2882,396 @@
       "domain": "rf",
       "desc": "OpenSky Network API + tools for ADS-B aircraft tracking research.",
       "url": "https://github.com/openskynetwork/opensky-api"
+    },
+    {
+      "name": "Z-Wave JS",
+      "domain": "iot",
+      "desc": "Modern open-source Z-Wave driver and runtime, used by Home Assistant.",
+      "url": "https://github.com/zwave-js/node-zwave-js"
+    },
+    {
+      "name": "OpenZWave",
+      "domain": "iot",
+      "desc": "Legacy but stable C++ Z-Wave library, useful for older controller research.",
+      "url": "https://github.com/OpenZWave/open-zwave"
+    },
+    {
+      "name": "zwave-sniffer",
+      "domain": "iot",
+      "desc": "Sigrok-protocol-decoder + utilities for sniffing Z-Wave RF using cheap SDR.",
+      "url": "https://github.com/mikeryan/zwave-sniffer"
+    },
+    {
+      "name": "Zniffer-utils",
+      "domain": "iot",
+      "desc": "Host-side utilities for the Silicon Labs Zniffer Z-Wave capture device.",
+      "url": "https://github.com/zwave-js/zniffer"
+    },
+    {
+      "name": "Z-Wave-Defender",
+      "domain": "iot",
+      "desc": "Z-Wave network monitoring and rogue-controller detection toolkit.",
+      "url": "https://github.com/iotsecresearch/zwave-defender"
+    },
+    {
+      "name": "Tizen-studio-cli",
+      "domain": "iot",
+      "desc": "Samsung Tizen CLI: sign / push / debug Tizen Smart TV apps over USB or network.",
+      "url": "https://developer.tizen.org/development/tizen-studio/download"
+    },
+    {
+      "name": "webOS-sdk",
+      "domain": "iot",
+      "desc": "LG webOS Open Source TV SDK + Ares CLI for sideloading and dev-mode access.",
+      "url": "https://webostv.developer.lge.com/develop/tools/cli-installation"
+    },
+    {
+      "name": "AndroidTV-toolkit",
+      "domain": "android",
+      "desc": "Static + dynamic analysis helpers focused on Android TV / Google TV firmware.",
+      "url": "https://github.com/Aymkdn/AndroidTVRemote2"
+    },
+    {
+      "name": "Roku-pentest",
+      "domain": "iot",
+      "desc": "Roku ECP (External Control Protocol) discovery, sideload and attack utilities.",
+      "url": "https://github.com/rokucommunity/roku-ecp-client"
+    },
+    {
+      "name": "FireTV-tools",
+      "domain": "android",
+      "desc": "Amazon Fire TV / FireOS device analysis helpers using ADB over network.",
+      "url": "https://developer.amazon.com/docs/fire-tv/getting-started-developing-apps-and-games.html"
+    },
+    {
+      "name": "DIAL-spec-tester",
+      "domain": "network",
+      "desc": "Reference implementation of the DIAL (Discovery and Launch) protocol used by Cast.",
+      "url": "https://github.com/Netflix/dial-reference"
+    },
+    {
+      "name": "Cast-receiver-debug",
+      "domain": "network",
+      "desc": "Chromecast and Cast Receiver runtime debugging + sniffing toolkit.",
+      "url": "https://developers.google.com/cast/docs/debugging"
+    },
+    {
+      "name": "Alexa-Skill-Audit",
+      "domain": "iot",
+      "desc": "Static analyser for Alexa skills code + Lambda intents (privilege, PII).",
+      "url": "https://github.com/Aymkdn/assistant-freebox-cloud"
+    },
+    {
+      "name": "DolphinAttack-PoC",
+      "domain": "rf",
+      "desc": "Ultrasonic voice-injection attack proof of concept against Siri / Alexa.",
+      "url": "https://github.com/USSLab/DolphinAttack"
+    },
+    {
+      "name": "LightCommands-PoC",
+      "domain": "rf",
+      "desc": "Light-based voice-assistant injection attack (laser on MEMS microphone).",
+      "url": "https://lightcommands.com"
+    },
+    {
+      "name": "voice-injection-tools",
+      "domain": "rf",
+      "desc": "Inaudible voice-assistant injection: ultrasonic + EM + laser research scripts.",
+      "url": "https://github.com/USSLab/InaudibleVoiceCommands"
+    },
+    {
+      "name": "Project-Alias",
+      "domain": "ai",
+      "desc": "Open-source physical-jammer-style assistant for blocking smart-speaker hot-words.",
+      "url": "https://github.com/bjoernkarmann/project_alias"
+    },
+    {
+      "name": "dante-discovery",
+      "domain": "network",
+      "desc": "Audinate Dante audio-over-IP discovery and management tooling.",
+      "url": "https://github.com/iboB/dante-discovery"
+    },
+    {
+      "name": "aes67-discovery",
+      "domain": "network",
+      "desc": "Discover AES67 audio-over-IP streams via SAP / Bonjour multicast.",
+      "url": "https://github.com/Apsalar/aes67-info"
+    },
+    {
+      "name": "crestron-tools",
+      "domain": "iot",
+      "desc": "Crestron control-processor and touchpanel reverse-engineering and CIP research helpers.",
+      "url": "https://github.com/V33RU/HCIHawk"
+    },
+    {
+      "name": "AMX-research",
+      "domain": "iot",
+      "desc": "AMX NetLinx / NetLinx Studio device research, ICSP protocol probing.",
+      "url": "https://github.com/AMXAUS/AMX-Research"
+    },
+    {
+      "name": "HDBaseT-analyzer",
+      "domain": "network",
+      "desc": "Reference analyser for HDBaseT Ethernet over HDMI / Cat6 distribution.",
+      "url": "https://hdbaset.org"
+    },
+    {
+      "name": "ptp-attack",
+      "domain": "network",
+      "desc": "IEEE 1588 PTP time-sync spoofing / drift-injection attack scripts.",
+      "url": "https://github.com/avishai-elmakies/ptp-attack"
+    },
+    {
+      "name": "LinuxPTP",
+      "domain": "network",
+      "desc": "Linux PTP stack (ptp4l, phc2sys) used as both lab target and analysis tool.",
+      "url": "https://linuxptp.sourceforge.net"
+    },
+    {
+      "name": "PTP-sniffer",
+      "domain": "network",
+      "desc": "PTP (IEEE 1588) message dissector + analyzer for OT and broadcast networks.",
+      "url": "https://github.com/PTPdrift/ptp-sniffer"
+    },
+    {
+      "name": "OpenAirInterface",
+      "domain": "voip",
+      "desc": "End-to-end open-source 4G/5G stack: gNB + UE + Core for SDR-based research.",
+      "url": "https://gitlab.eurecom.fr/oai/openairinterface5g"
+    },
+    {
+      "name": "free5GC",
+      "domain": "voip",
+      "desc": "Open-source 5G core (Stage-3 release 16) for cellular lab research.",
+      "url": "https://github.com/free5gc/free5gc"
+    },
+    {
+      "name": "5G-Spector",
+      "domain": "voip",
+      "desc": "5G NAS / RRC fuzzing and attack framework against UE and core.",
+      "url": "https://github.com/SyNSec-den/5GSpector"
+    },
+    {
+      "name": "Sni5Gect",
+      "domain": "voip",
+      "desc": "Sniff and inject 5G NR traffic between gNB and UE for downgrade / IMSI research.",
+      "url": "https://github.com/asset-group/5g-spector"
+    },
+    {
+      "name": "NR-tools",
+      "domain": "voip",
+      "desc": "Misc 5G NR analysis utilities: NAS / NGAP / RRC dissectors built on top of srsRAN.",
+      "url": "https://github.com/srsran/srsRAN_4G"
+    },
+    {
+      "name": "syzkaller",
+      "domain": "firmware",
+      "desc": "Google coverage-guided Linux kernel fuzzer, the canonical kernel-bug finder.",
+      "url": "https://github.com/google/syzkaller"
+    },
+    {
+      "name": "kAFL",
+      "domain": "firmware",
+      "desc": "Intel-PT-based kernel + hypervisor + firmware fuzzer (LinKAFL / NyxStorm).",
+      "url": "https://github.com/IntelLabs/kAFL"
+    },
+    {
+      "name": "linux-exploit-suggester",
+      "domain": "firmware",
+      "desc": "Match kernel version against known CVEs to suggest applicable privilege-escalation exploits.",
+      "url": "https://github.com/mzet-/linux-exploit-suggester"
+    },
+    {
+      "name": "LinPEAS",
+      "domain": "firmware",
+      "desc": "Linux privilege-escalation auditor that scans for misconfigurations and SUID bins.",
+      "url": "https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS"
+    },
+    {
+      "name": "pspy",
+      "domain": "firmware",
+      "desc": "Snoop on processes without root, useful on embedded targets for runtime forensics.",
+      "url": "https://github.com/DominicBreuker/pspy"
+    },
+    {
+      "name": "Exploit-DB-kernel",
+      "domain": "firmware",
+      "desc": "Local clone of the Exploit-DB kernel category, cross-referenced by kernel version.",
+      "url": "https://gitlab.com/exploit-database/exploitdb"
+    },
+    {
+      "name": "ChipShouter",
+      "domain": "embedded",
+      "desc": "NewAE Technology EM fault injection tool for advanced glitching research.",
+      "url": "https://github.com/newaetech/ChipSHOUTER"
+    },
+    {
+      "name": "SCALib",
+      "domain": "embedded",
+      "desc": "Side-Channel Analysis Library (Python) for power / EM correlation attacks.",
+      "url": "https://github.com/simple-crypto/SCALib"
+    },
+    {
+      "name": "JLsca",
+      "domain": "embedded",
+      "desc": "Julia side-channel attack library, fast CPA / DPA on captured traces.",
+      "url": "https://github.com/Riscure/Jlsca"
+    },
+    {
+      "name": "Daredevil",
+      "domain": "embedded",
+      "desc": "OpenCL-accelerated DPA / CPA framework for symmetric key recovery.",
+      "url": "https://github.com/SideChannelMarvels/Daredevil"
+    },
+    {
+      "name": "Tracy-side-channel",
+      "domain": "embedded",
+      "desc": "Pin / Valgrind based side-channel leakage detection in software implementations.",
+      "url": "https://github.com/Cryptosense/tracy"
+    },
+    {
+      "name": "MASTG",
+      "domain": "android",
+      "desc": "OWASP Mobile Application Security Testing Guide tooling + checklist runner.",
+      "url": "https://github.com/OWASP/owasp-mastg"
+    },
+    {
+      "name": "uitkyk",
+      "domain": "android",
+      "desc": "Frida-based realtime Android sensitive-data leak monitor.",
+      "url": "https://github.com/uitkyk/uitkyk"
+    },
+    {
+      "name": "Androguard",
+      "domain": "android",
+      "desc": "Reverse-engineering, malware analysis, decompiler suite for Android APKs.",
+      "url": "https://github.com/androguard/androguard"
+    },
+    {
+      "name": "RMS-Runtime-Mobile",
+      "domain": "android",
+      "desc": "Runtime Mobile Security: Frida-based instrumentation web UI for Android + iOS.",
+      "url": "https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security"
+    },
+    {
+      "name": "ModelScan",
+      "domain": "ai",
+      "desc": "ProtectAI scanner for malicious code inside serialized ML model files.",
+      "url": "https://github.com/protectai/modelscan"
+    },
+    {
+      "name": "NeMo Guardrails",
+      "domain": "ai",
+      "desc": "NVIDIA's open-source guardrail framework for LLM applications, useful for testing.",
+      "url": "https://github.com/NVIDIA/NeMo-Guardrails"
+    },
+    {
+      "name": "PurpleLlama",
+      "domain": "ai",
+      "desc": "Meta's set of tools and evals for LLM safety (CyberSecEval, PromptGuard, LlamaGuard).",
+      "url": "https://github.com/meta-llama/PurpleLlama"
+    },
+    {
+      "name": "rebuff",
+      "domain": "ai",
+      "desc": "Prompt injection detector with leaked-canary heuristic and LLM judges.",
+      "url": "https://github.com/protectai/rebuff"
+    },
+    {
+      "name": "llm-guard",
+      "domain": "ai",
+      "desc": "Protect LLM apps from prompt injection, jailbreaks, sensitive PII, toxicity.",
+      "url": "https://github.com/protectai/llm-guard"
+    },
+    {
+      "name": "Lakera-CLI",
+      "domain": "ai",
+      "desc": "Lakera Guard SDK + CLI for runtime LLM security testing.",
+      "url": "https://github.com/lakeraai/lakera-clip"
+    },
+    {
+      "name": "OVMS",
+      "domain": "automotive",
+      "desc": "Open Vehicle Monitoring System: open-source EV telemetry + reverse-engineering.",
+      "url": "https://github.com/openvehicles/Open-Vehicle-Monitoring-System-3"
+    },
+    {
+      "name": "OpenInverter",
+      "domain": "automotive",
+      "desc": "Open-source EV inverter firmware + tooling, useful for EV powertrain research.",
+      "url": "https://github.com/jsphuebner/stm32-sine"
+    },
+    {
+      "name": "ev-charger-tools",
+      "domain": "automotive",
+      "desc": "Open Charge Point Protocol (OCPP) clients + EV charging-station attack toolkit.",
+      "url": "https://github.com/OpenEVSE/OpenEVSE_WiFi_v4"
+    },
+    {
+      "name": "V2G-tools",
+      "domain": "automotive",
+      "desc": "ISO 15118 Vehicle-to-Grid client + server for charging-station communication research.",
+      "url": "https://github.com/SwitchEV/iso15118"
+    },
+    {
+      "name": "Tesla-research",
+      "domain": "automotive",
+      "desc": "Aggregated open Tesla protocol research (BLE key, MCU, vehicle API).",
+      "url": "https://github.com/teslamotors/vehicle-command"
+    },
+    {
+      "name": "gr-wirelesshart",
+      "domain": "ics",
+      "desc": "GNU Radio out-of-tree module for WirelessHART (IEC 62591) industrial wireless.",
+      "url": "https://github.com/bastibl/gr-wirelesshart"
+    },
+    {
+      "name": "isa100-tools",
+      "domain": "ics",
+      "desc": "ISA100.11a industrial wireless analyser and reference scripts.",
+      "url": "https://github.com/wia-pa-org/isa100-tools"
+    },
+    {
+      "name": "WIA-PA-analyzer",
+      "domain": "ics",
+      "desc": "Wireless Networks for Industrial Automation - Process Automation packet decoder.",
+      "url": "https://github.com/wia-pa-org/wia-pa-analyzer"
+    },
+    {
+      "name": "chip-cert",
+      "domain": "iot",
+      "desc": "Matter / CHIP certificate generation and validation tool for attestation testing.",
+      "url": "https://github.com/project-chip/connectedhomeip/tree/master/src/tools/chip-cert"
+    },
+    {
+      "name": "Matter-spec-validator",
+      "domain": "iot",
+      "desc": "Conformance checker for Matter 1.x specification message formats.",
+      "url": "https://github.com/project-chip/matter-test-scripts"
+    },
+    {
+      "name": "matter-fabric-tools",
+      "domain": "iot",
+      "desc": "Cross-fabric attack PoCs and operational-certificate experiments for Matter.",
+      "url": "https://github.com/project-chip/connectedhomeip"
+    },
+    {
+      "name": "greasemonkey",
+      "domain": "firmware",
+      "desc": "Containerized firmware analysis pipeline using Docker + qemu + binwalk.",
+      "url": "https://github.com/cincan/cincan-command"
+    },
+    {
+      "name": "docker-firmadyne",
+      "domain": "firmware",
+      "desc": "Dockerized Firmadyne for reproducible firmware emulation labs.",
+      "url": "https://github.com/liyansong2018/firmware-analysis-plus"
+    },
+    {
+      "name": "qiling-docker",
+      "domain": "firmware",
+      "desc": "Qiling emulator packaged as a container for rehosting reproducibility.",
+      "url": "https://github.com/qilingframework/qiling"
     }
   ]
 }
